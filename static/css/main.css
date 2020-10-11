@@ -1,0 +1,107 @@
+.main__title{
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+.main__subtitle{
+    font-size: 15px;
+    text-align: left;
+}
+.main__subtitle  span{
+    color: #faff00;
+}
+.navbar__link{
+    text-transform: uppercase;
+}
+.info__title{
+    text-transform: uppercase;
+}
+.info__card-title{
+    color: #faff00;
+    font-size: 22px;
+}
+.info__card-subtitle{
+    font-size: 14px;
+    width: 200px;
+}
+.warranty__title{
+    text-transform: uppercase;
+}
+.warranty__card-title{
+    color: #faff00;
+    font-size: 22px;
+}
+.warranty__card-subtitle p{
+    font-size: 15px;
+    width: 230px;
+    text-align: left;
+}
+.about__title{
+    text-transform: uppercase;
+}
+.about__item-title{
+    color: #faff00;
+}
+.courses__title{
+    text-transform: uppercase;
+}
+.slider__title{
+    text-transform: uppercase;
+}
+.number{
+    margin: 0;
+    padding: 0;
+}
+.cever{
+    margin-top: 40px;
+    padding: 40px;
+}
+.item{
+    border-radius: 2%;
+}
+.cards__name{
+   color: #faff00;
+}
+.smm__item-title{
+    color: #faff00;
+}
+.cards__btn a{
+    text-transform: uppercase;
+}.videos__card-video iframe{
+    width: 300px;
+    height: 270px;
+}
+.communication__title{
+    text-transform: uppercase;
+}
+.yozuv h2 span{
+    text-transform: uppercase;
+}
+.qulayliklar h1 span{
+    text-transform: uppercase;
+    color: #faff00;
+}
+.qulayliklar h1{
+    text-transform: uppercase;
+    color: #faff00;
+}
+.kurss{
+    text-transform: uppercase;
+}
+.ish_h2{
+    text-transform: uppercase;
+}
+.fikr{
+    text-transform: uppercase;
+}
+.back1 {
+    background-image: url(../img/Fulfilimg/Gulxayo.jpg);
+    background-position: center;
+ }
+ .back2 {
+    background-image: url(../img/Fulfilimg/komil.jpg);
+    background-position: center;
+ }
+ .back3 {
+    background-image: url(../img/Fulfilimg/Zoxriddin.jpg);
+    background-position: center;
+ }
