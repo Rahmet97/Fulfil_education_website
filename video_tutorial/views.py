@@ -17,7 +17,6 @@ from .models import (
     CourseCategory,
     VideoCourse,
 )
-from .forms import *
 
 # Create your views here.
 
@@ -55,7 +54,7 @@ class VideoTutorial(View):
 	def get(self, request, id=None, *args, **kwargs):
 		
 		video_object_list  = None
-		category_object = None
+		category_object    = None
 	
 		category_object, video_list = self.get_object()
 
@@ -66,9 +65,9 @@ class VideoTutorial(View):
 		page_number 		= request.GET.get('page')
 		video_object_list   = paginator.get_page(page_number)
 
-		self.context['video_object_list']  = video_object_list
-		self.context['category_object'] = category_object
-		self.context['page_indexes']		 = page_indexes
+		self.context['video_object_list'] = video_object_list
+		self.context['category_object']   = category_object
+		self.context['page_indexes']      = page_indexes
 		
 		return render(
             request,
