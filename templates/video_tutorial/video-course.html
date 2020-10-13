@@ -1,0 +1,29 @@
+{% extends 'video_tutorial/base.html' %}
+{% load static %}
+
+{% block content %}
+	<section>
+		<div class="videos">
+			<div class="videos__body">
+				<div class="videos__title"><span>{{ category_object }}</span> darslari</div>
+				<div class="videos__items">
+					{% for object in video_object_list %}
+					<div class="videos__card">
+						<div class="videos__card-video"><iframe src="{{ object.video_url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+						<!-- <p>{{ object.video_name }}</p> -->
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+    
+   
+	<div class="pages-numb">
+        <hr>
+		<!-- <a href="#!" class="active">1</a> -->
+        {% include "video_tutorial/includes/pagination.html" %} 
+        <hr>	
+    </div>
+   	
+{% endblock content %}

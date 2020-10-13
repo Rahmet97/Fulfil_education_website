@@ -1,0 +1,63 @@
+{% extends 'video_tutorial/base.html' %}
+{% load static %}
+{% block content %}
+
+
+	<section style="margin-bottom: 70px">
+		<div class="courses wrapper">
+			<div class="courses__body">
+				<div class="courses__title page4" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">
+					<span>Bepul</span> video darslar 
+				</div>
+
+				<div class="courses__cards cards">
+					{% for object in object_list %}
+					<div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
+						<div class="cards__img"><img src="{{ object.category_image.url }}" alt="image"></div>
+						<div class="cards__name">{{ object.category_name|upper }}</div>
+						<div class="cards__text"> {{ object.category_description|safe }} </div>
+						<div class="cards__btn"><a href="{% url 'Videos:video-course' object.id %}">Darslarni Ko’rish</a></div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock content %}
+
+
+
+<div class="courses__cards cards">
+
+	<div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
+		<div class="cards__img"><img src="{% static 'img/courses-4.png' %}" alt="image"></div>
+		<div class="cards__name">PYTHON</div>
+		<div class="cards__text">
+			Python bo'yicha bepul video darslarimiz orqali siz Python mutahasisi bo'lishingiz mumkin, darslarimiz tajribali 
+			ustoz tomonidan tayyorlangan va mutlaqo bepul!
+		</div>
+		<div class="cards__btn"><a href="./Python-video.html">Darslarni Ko’rish</a></div>
+	</div>
+
+	<div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200">
+		<div class="cards__img"><img src="{% static 'img/courses-5.png' %}" alt="image"></div>
+		<div class="cards__name">ENGLISH</div>
+		<div class="cards__text">
+			English bo'yicha bepul video darslarimiz orqali siz English mutahasisi bo'lishingiz mumkin, darslarimiz tajribali 
+			ustoz tomonidan tayyorlangan va mutlaqo bepul!
+		</div>
+		<div class="cards__btn"><a href="./Ingliz-video.html">Darslarni Ko’rish</a></div>
+	</div>
+
+	<div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
+		<div class="cards__img"><img src="{% static 'img/courses-6.png' %}" alt="image"></div>
+		<div class="cards__name">ANDROID</div>
+		<div class="cards__text">
+			Android bo'yicha bepul video darslarimiz orqali siz Android mutahasisi bo'lishingiz mumkin, darslarimiz tajribali 
+			ustoz tomonidan tayyorlangan va mutlaqo bepul!
+		</div>
+		<div class="cards__btn"><a href="./Android-video.html">Darslarni Ko’rish</a></div>
+	</div>
+</div>
+
