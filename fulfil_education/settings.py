@@ -72,7 +72,7 @@ INSTALLED_APPS = [
 
     # local apps
     'fulfil.apps.FulfilConfig',
-    # 'video_tutorial.apps.VideoTutorialConfig',
+    'video_tutorial.apps.VideoTutorialConfig',
 ]
 
 MIDDLEWARE = [
