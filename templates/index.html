@@ -1,456 +1,370 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- scroll animation link -->
-	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	<!-- icons-link -->
-	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-	<!-- style-link -->
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/main.css">
-	<!-- <link rel="stylesheet" href="./resourches/animate.css"> -->
+{% block content %}
 
-	<title>Education</title>
-</head>
+    <div class="header-anime" id="header-anime"></div>
 
-<body>
-	<div class="header-anime" id="header-anime"></div>
-	<div class="wrapper">
+    <div class="wrapper">
 
-		<header class="wow animate__animated animate__bounce">
-			<div class="navbar" id="navbar">
-				<div class="navbar__body">
-					<div class="navbar__item">
-						<div class="navbar__logo"><a href="#"><img src="./img/icons/16-layers.png" alt="image"></a></div>
-						<div class="navbar__burger active-burger">
-							<span></span>
-							<span></span>
-							<span></span>
-						</div>
-						<!-- burger bg animation -->
+        {% include 'include/header.html' %}
 
 
-						<!-- burger bg animation /-->
-						<ul class="navbar__links hide">
-							<li><a href="./index.html" class="navbar__link active">Bosh sahifa</a></li>
-							<li><a href="./teachers.html" class="navbar__link">O’qituvchilar </a></li>
-							<li><a href="./cources.html" class="navbar__link">Kurslar </a></li>
-							<li><a href="./freecourses.html" class="navbar__link">Video darslar </a></li>
-							<li><a href="./about.html" class="navbar__link">Biz haqimizda</a></li>
-							<li><a href="./blog.html" class="navbar__link">Blog</a></li>
-							<li><a href="./aloqa.html" class="navbar__link">Aloqa</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</header>
+        <main>
+            <div class="main">
+                <div class="main__body">
+                    <div class="main__items">
+                        <div class="main__item text" data-aos="fade-right" data-aos-duration="2000">
+                            <div class="main__title"><span>Fulfil education</span> saytiga xush kelibsiz</div>
+                            <div class="main__subtitle">
+                                <p>Fulfil education bir guruh tajribali dasturchilar tomonidan yaratilgan
+                                    bepul ta'lim platformasi bo'lib bu ta'lim platformada dasturlash, marketing,
+                                    dizayn
+                                    sohalarida bepul va pro kurslar chiqib boradi, biz bilan dasturlashni mukammal
+                                    o'rganing!
+                                </p><span>Ishonch kuch mukammallik bizda mujassam!</span>
+                            </div>
+                        </div>
+                        <div class="main__item" data-aos="fade-left" data-aos-duration="3000">
+                            <img src="{% static '/img/img-1.png' %}" alt="images" class="item__img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
 
-		<main>
-			<div class="main">
-				<div class="main__body">
-					<div class="main__items">
-						<div class="main__item text" data-aos="fade-right" data-aos-duration="2000">
-							<div class="main__title"><span>Fulfil education</span> saytiga xush kelibsiz</div>
-							<div class="main__subtitle">
-								<p>Fulfil education bir guruh tajribali dasturchilar tomonidan yaratilgan
-									bepul ta'lim platformasi bo'lib bu ta'lim platformada dasturlash, marketing, dizayn
-									sohalarida bepul va pro kurslar chiqib boradi, biz bilan dasturlashni mukammal o'rganing!
-								</p><span>Ishonch kuch mukammallik bizda mujassam!</span>
-							</div>
-						</div>
-						<div class="main__item" data-aos="fade-left" data-aos-duration="3000">
-							<img src="./img/img-1.png" alt="images" class="item__img">
-						</div>
-					</div>
-				</div>
-			</div>
-		</main>
+        <section>
+            <div class="info">
+                <div class="info__body">
+                    <div class="info__title" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1000">Nega
+                        aynan
+                        <span>biz ?</span></div>
+                    <div class="info__cards">
+                        <div class="info__card" data-aos="fade-up" data-aos-duration="2000">
+                            <div class="info__card-img"><img src="{% static '/img/card-1.png' %}" alt="images"></div>
+                            <div class="info__text">
+                                <div class="info__card-title">Tajribali o’qituvchilar</div>
+                                <div class="info__card-subtitle">
+                                    <p>Bizning o’qituvchilar o’z ishining ustalari yani proffesionallar jamoasidan
+                                        tashkil
+                                        topgan!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info__card" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+                            <div class="info__card-img"><img src="{% static '/img/card-2.png' %}" alt="images"></div>
+                            <div class="info__text">
+                                <div class="info__card-title">Kamida junior</div>
+                                <div class="info__card-subtitle">
+                                    <p>Bizning kurslarni tugatib siz junior dasturchi darajasiga chiqishingiz
+                                        mumkin!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info__card" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">
+                            <div class="info__card-img"><img src="{% static '/img/card-3.png' %}" alt="images"></div>
+                            <div class="info__text">
+                                <div class="info__card-title">Kurs bitiruvchilari</div>
+                                <div class="info__card-subtitle">
+                                    <p>Bizda xozirda 100 dan ortiq talabalar dasturlash tillarini mukammal o'rganib
+                                        chiqmoqda!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info__cards">
+                        <div class="info__card" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
+                            <div class="info__card-img"><img src="{% static '/img/card-4.png' %}" alt="images"></div>
+                            <div class="info__text">
+                                <div class="info__card-title">Muhim amalyotlar</div>
+                                <div class="info__card-subtitle">
+                                    <p>Bizni darslar orqali 90% amalyotda dasturlash tillarini o'rganib dasturchi
+                                        bo'lasiz!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info__card" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200">
+                            <div class="info__card-img"><img src="{% static '/img/card-5.png' %}" alt="images"></div>
+                            <div class="info__text">
+                                <div class="info__card-title">Tayyor portfolio</div>
+                                <div class="info__card-subtitle">
+                                    <p>Bizni kurslar orqali darslar davomida sizda tayyor portfolio shakllanadi!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info__card" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
+                            <div class="info__card-img"><img src="{% static '/img/card-6.png' %}" alt="images"></div>
+                            <div class="info__text">
+                                <div class="info__card-title">Tajribali dasturchilar</div>
+                                <div class="info__card-subtitle">
+                                    <p>Bizning ustozlar dasturlash sohasida xam 7-8 yildan buyon faolyat olib
+                                        boradi!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-		<section>
-			<div class="info">
-				<div class="info__body">
-					<div class="info__title" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1000">Nega aynan
-						<span>biz ?</span> </div>
-					<div class="info__cards">
-						<div class="info__card" data-aos="fade-up" data-aos-duration="2000">
-							<div class="info__card-img"><img src="./img/card-1.png" alt="images"></div>
-							<div class="info__text">
-								<div class="info__card-title">Tajribali o’qituvchilar</div>
-								<div class="info__card-subtitle">
-									<p>Bizning o’qituvchilar o’z ishining ustalari yani proffesionallar jamoasidan tashkil
-										topgan!
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="info__card" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
-							<div class="info__card-img"><img src="./img/card-2.png" alt="images"></div>
-							<div class="info__text">
-								<div class="info__card-title">Kamida junior</div>
-								<div class="info__card-subtitle">
-									<p>Bizning kurslarni tugatib siz junior dasturchi darajasiga chiqishingiz mumkin!
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="info__card" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">
-							<div class="info__card-img"><img src="./img/card-3.png" alt="images"></div>
-							<div class="info__text">
-								<div class="info__card-title">Kurs bitiruvchilari</div>
-								<div class="info__card-subtitle">
-									<p>Bizda xozirda 100 dan ortiq talabalar dasturlash tillarini mukammal o'rganib chiqmoqda!
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="info__cards">
-						<div class="info__card" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
-							<div class="info__card-img"><img src="./img/card-4.png" alt="images"></div>
-							<div class="info__text">
-								<div class="info__card-title">Muhim amalyotlar</div>
-								<div class="info__card-subtitle">
-									<p>Bizni darslar orqali 90% amalyotda dasturlash tillarini o'rganib dasturchi bo'lasiz!
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="info__card" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200">
-							<div class="info__card-img"><img src="./img/card-5.png" alt="images"></div>
-							<div class="info__text">
-								<div class="info__card-title">Tayyor portfolio</div>
-								<div class="info__card-subtitle">
-									<p>Bizni kurslar orqali darslar davomida sizda tayyor portfolio shakllanadi!
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="info__card" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
-							<div class="info__card-img"><img src="./img/card-6.png" alt="images"></div>
-							<div class="info__text">
-								<div class="info__card-title">Tajribali dasturchilar</div>
-								<div class="info__card-subtitle">
-									<p>Bizning ustozlar dasturlash sohasida xam 7-8 yildan buyon faolyat olib boradi!
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+        <section>
+            <div class="warranty">
+                <div class="warranty__body">
+                    <div class="warranty__title" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">
+                        Biz
+                        sizga
+                        <span>kafolat</span> beramiz
+                    </div>
+                    <div class="warranty__cards">
+                        <div class="warranty__card" data-aos="fade-up" data-aos-duration="2000"
+                             data-aos-delay="100">
+                            <div class="warranty__card-img"><img src="{% static '/img/warranty-1.png' %}" alt="image">
+                            </div>
+                            <div class="warranty__card-title">Yuqori sifatdagi ta'lim</div>
+                            <div class="warranty__card-subtitle">
+                                <p>
+                                    Yuqori sifatdagi ta'lim va sizning kelajak yo'lingiz uchun ajoyib eng muhim
+                                    bo’lgan
+                                    bilim
+                                    konikmalari
+                                </p>
+                            </div>
+                        </div>
+                        <div class="warranty__card" data-aos="fade-up" data-aos-duration="2000"
+                             data-aos-delay="200">
+                            <div class="warranty__card-img"><img src="{% static '/img/warranty-2.png' %}" alt="image">
+                            </div>
+                            <div class="warranty__card-title">IT firmada amalyot</div>
+                            <div class="warranty__card-subtitle">
+                                <p>
+                                    Kurs qatnashuvchilarga darslar davomida IT firmamiz yoki xamkor firmalarda
+                                    amalyot
+                                    o'tash
+                                    imkoni
+                                </p>
+                            </div>
+                        </div>
+                        <div class="warranty__card" data-aos="fade-up" data-aos-duration="2000"
+                             data-aos-delay="300">
+                            <div class="warranty__card-img"><img src="{% static '/img/warranty-3.png' %}" alt="image">
+                            </div>
+                            <div class="warranty__card-title">Ishga joylashish imkoni</div>
+                            <div class="warranty__card-subtitle">
+                                <p>
+                                    Kursni iqtidorli bitiruvchilari uchun bizni IT firmada yoki xamkor IT firmalarda
+                                    ishlash
+                                    imkoni mavjud
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-		<section>
-			<div class="warranty">
-				<div class="warranty__body">
-					<div class="warranty__title" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">Biz sizga
-						<span>kafolat</span> beramiz</div>
-					<div class="warranty__cards">
-						<div class="warranty__card" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
-							<div class="warranty__card-img"><img src="./img/warranty-1.png" alt="image"></div>
-							<div class="warranty__card-title">Yuqori sifatdagi ta'lim </div>
-							<div class="warranty__card-subtitle">
-								<p>
-									Yuqori sifatdagi ta'lim va sizning kelajak yo'lingiz uchun ajoyib eng muhim bo’lgan bilim
-									konikmalari
-								</p>
-							</div>
-						</div>
-						<div class="warranty__card" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200">
-							<div class="warranty__card-img"><img src="./img/warranty-2.png" alt="image"></div>
-							<div class="warranty__card-title">IT firmada amalyot</div>
-							<div class="warranty__card-subtitle">
-								<p>
-									Kurs qatnashuvchilarga darslar davomida IT firmamiz yoki xamkor firmalarda amalyot o'tash
-									imkoni
-								</p>
-							</div>
-						</div>
-						<div class="warranty__card" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
-							<div class="warranty__card-img"><img src="./img/warranty-3.png" alt="image"></div>
-							<div class="warranty__card-title">Ishga joylashish imkoni </div>
-							<div class="warranty__card-subtitle">
-								<p>
-									Kursni iqtidorli bitiruvchilari uchun bizni IT firmada yoki xamkor IT firmalarda ishlash
-									imkoni mavjud
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+        <main>
+            <div class="background">
+                <div class="background__images">
+                    <img src="{% static '/img/Vector_1.png' %}" alt="images" class="img1">
+                    <img src="{% static '/img/Vector_2.png' %}" alt="images" class="img2">
+                    <img src="{% static '/img/Ellipse_10.png' %}" alt="images" class="img3">
+                    <img src="{% static '/img/Vector_3.png' %}" alt="images" class="img4">
+                    <img src="{% static '/img/2-layers-3.png' %}" alt="images" class="img5">
+                    <img src="{% static '/img/2-layers-2.png' %}" alt="images" class="img6">
+                    <img src="{% static '/img/2-layers-4.png' %}" alt="images" class="img7">
+                    <img src="{% static '/img/2-layers-5.png' %}" alt="images" class="img8">
+                    <img src="{% static '/img/3-layers-6.png' %}" alt="images" class="img9">
+                    <img src="{% static '/img/3-layers-7.png' %}" alt="images" class="img10">
+                    <img src="{% static '/img/3-layers-8.png' %}" alt="images" class="img11">
+                    <img src="{% static '/img/2-layers-9.png' %}" alt="images" class="img12">
 
-		<main>
-			<div class="background">
-				<div class="background__images">
-					<img src="./img/Vector_1.png" alt="images" class="img1">
-					<img src="./img/Vector_2.png" alt="images" class="img2">
-					<img src="./img/Ellipse_10.png" alt="images" class="img3">
-					<img src="./img/Vector_3.png" alt="images" class="img4">
-					<img src="./img/2-layers-3.png" alt="images" class="img5">
-					<img src="./img/2-layers-2.png" alt="images" class="img6">
-					<img src="./img/2-layers-4.png" alt="images" class="img7">
-					<img src="./img/2-layers-5.png" alt="images" class="img8">
-					<img src="./img/3-layers-6.png" alt="images" class="img9">
-					<img src="./img/3-layers-7.png" alt="images" class="img10">
-					<img src="./img/3-layers-8.png" alt="images" class="img11">
-					<img src="./img/2-layers-9.png" alt="images" class="img12">
+                </div>
 
-				</div>
+            </div>
+        </main>
 
-			</div>
-		</main>
+    </div>
 
-	</div>
-	<section>
-		<div class="about" id="about">
+    <section>
+        <div class="about" id="about">
 
-			<div class="about__body">
-				<div class="about__items">
-					<div class="about__title" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500"><span>Fulfil
-							education</span> asoschisi</div>
-					<div class="about__items-body wrapper">
-						<div class="about__item-text">
-							<div class="about__item-title">Abduaxatov Suhrobbek</div>
-							<div class="about__item-subtitle">
-								<p>
-									Suhrob Abduaxatov Fulfil education IT ta'lim markazi asoschisi,
-									xamda Instant Company IT firma IT direktori, o'zi xam dasturlash sohasida
-									dasturchi, bir necha loyixalar va saytlar muallifi Frontend dasturlovchi
-									ijtimoiy tarmoqlarda xam saxifalari yuritadi xamda ularni rivojlantirish uchun
-									xarakatda bo'ladi, boshlagan loyixalarni rivojlantirish uchun bor kuchi bilan xarakat
-									qiladi va dasturlash tillari bo'yicha barcha bilganlarini boshqalarga bepul o'rgatish
-									maqsadida
-									bepul video darslar chiqarib boradi veb saytlar yaratish bo'yicha xar qanday
-									turdagi veb saytlarni yaratib ularni animatsiyalar orqali jonlantirish bo'yicha
-									xam ko'plab ishlar olib borgan, Fulfil education IT ta'lim yo'nalishlarini yanada
-									rivojlantirish
-									va ta'lim sifatini yana yaxshilash borasida ko'plab ishlar amalga oshirmoqda! Xozirda ko'plab
-									biznes
-									g'oyalar Startup loyixalar ososchisi hisoblanadi
+            <div class="about__body">
+                <div class="about__items">
+                    <div class="about__title" data-aos="fade-up" data-aos-duration="2000"
+                         data-aos-delay="500"><span>Fulfil
+							education</span> asoschisi
+                    </div>
+                    <div class="about__items-body wrapper">
+                        <div class="about__item-text">
+                            <div class="about__item-title">Abduaxatov Suhrobbek</div>
+                            <div class="about__item-subtitle">
+                                <p>
+                                    Suhrob Abduaxatov Fulfil education IT ta'lim markazi asoschisi,
+                                    xamda Instant Company IT firma IT direktori, o'zi xam dasturlash sohasida
+                                    dasturchi, bir necha loyixalar va saytlar muallifi Frontend dasturlovchi
+                                    ijtimoiy tarmoqlarda xam saxifalari yuritadi xamda ularni rivojlantirish uchun
+                                    xarakatda bo'ladi, boshlagan loyixalarni rivojlantirish uchun bor kuchi bilan
+                                    xarakat
+                                    qiladi va dasturlash tillari bo'yicha barcha bilganlarini boshqalarga bepul
+                                    o'rgatish
+                                    maqsadida
+                                    bepul video darslar chiqarib boradi veb saytlar yaratish bo'yicha xar qanday
+                                    turdagi veb saytlarni yaratib ularni animatsiyalar orqali jonlantirish bo'yicha
+                                    xam ko'plab ishlar olib borgan, Fulfil education IT ta'lim yo'nalishlarini
+                                    yanada
+                                    rivojlantirish
+                                    va ta'lim sifatini yana yaxshilash borasida ko'plab ishlar amalga oshirmoqda!
+                                    Xozirda ko'plab
+                                    biznes
+                                    g'oyalar Startup loyixalar ososchisi hisoblanadi
 
-								</p>
-							</div>
-						</div>
-						<div class="about__item-img" data-aos="zoom-in-up" data-aos-delay="500"><img
-								src="./img/Fulfilimg/photo_2020-07-21_17-21-37.jpg" width="450" height="457" alt="image"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="about__item-img" data-aos="zoom-in-up" data-aos-delay="500"><img
+                                src="{% static '/img/Fulfilimg/photo_2020-07-21_17-21-37.jpg' %}" width="450"
+                                height="457"
+                                alt="image"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<section>
-		<div class="courses wrapper">
-			<div class="courses__body">
-				<div class="courses__title" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">
-					<span>Pullik</span> kurslar </div>
-				<div class="courses__cards cards">
-					<div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
-						<div class="cards__img"><img src="./img/courses-1.png" alt="image"></div>
-						<div class="cards__name">SMM</div>
-						<div class="cards__text">
-							Siz bu kursni o'rganishingiz natijasida kuchli SMM mutaxasisi bo'lasiz xamda o'z SMM agentligingizga asos sola olasiz!
-						</div>
-					</div>
-					<div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200">
-						<div class="cards__img"><img src="./img/courses-2.png" alt="image"></div>
-						<div class="cards__name">FRONTEND</div>
-						<div class="cards__text">
-							Siz bu kursni biz bilan 5 oy davomida mukammal o'rganishingiz va IT firmalarga ishga joylashish
-							imkoniyatiga ega bo'lishingiz mumkin!
-						</div>
-					</div>
-					<div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
-						<div class="cards__img"><img src="./img/courses-3.png" alt="image"></div>
-						<div class="cards__name">BACKEND</div>
-						<div class="cards__text">
-							Siz bu kursni o'rganishingiz natijasida veb backend dasturchi bo'lib veb-saytlarni backendini 0 dan
-							progacha tayyorlay olasiz!
-						</div>
-					</div>
-				</div>
-				<div class="courses__cards cards">
-					<div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
-						<div class="cards__img"><img src="./img/courses-4.png" alt="image"></div>
-						<div class="cards__name">PYTHON</div>
-						<div class="cards__text">
-							Siz bu kursni o'rganishingiz natijasida 6 oyda Python dasturchi bo'lasiz, xamda freelancer bo'lib ishlash
-							imkoniyatiga xam ega bo'lasiz!
-						</div>
-					</div>
-					<div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200">
-						<div class="cards__img"><img src="./img/courses-5.png" alt="image"></div>
-						<div class="cards__name">Ingliz-tili</div>
-						<div class="cards__text">
-							Siz bu kursni 6 oy davomida o'rganib IELTS olish darajasigacha chiqasiz xamda Ingliz tilida ravon tushinib muloqat qilas olasiz!
-						</div>
-					</div>
-					<div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
-						<div class="cards__img"><img src="./img/courses-6.png" alt="image"></div>
-						<div class="cards__name">ANDROID</div>
-						<div class="cards__text">
-							Siz bu kursni o'rganishingiz natijasida Android Smartfonlar uchun xar qanday turdagi apklar yarata olasiz xamda  
-						    IT firmalarda ishlash imkoniga ega bo'lasiz!
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <section>
+        <div class="courses wrapper">
+            <div class="courses__body">
+                <div class="courses__title" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">
+                    <span>Pullik</span> kurslar
+                </div>
+                <div class="courses__cards cards">
+                    <div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
+                        <div class="cards__img"><img src="{% static '/img/courses-1.png' %}" alt="image"></div>
+                        <div class="cards__name">SMM</div>
+                        <div class="cards__text">
+                            Siz bu kursni o'rganishingiz natijasida kuchli SMM mutaxasisi bo'lasiz xamda o'z SMM
+                            agentligingizga asos sola olasiz!
+                        </div>
+                    </div>
+                    <div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200">
+                        <div class="cards__img"><img src="{% static '/img/courses-2.png' %}" alt="image"></div>
+                        <div class="cards__name">FRONTEND</div>
+                        <div class="cards__text">
+                            Siz bu kursni biz bilan 5 oy davomida mukammal o'rganishingiz va IT firmalarga ishga
+                            joylashish
+                            imkoniyatiga ega bo'lishingiz mumkin!
+                        </div>
+                    </div>
+                    <div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
+                        <div class="cards__img"><img src="{% static '/img/courses-3.png' %}" alt="image"></div>
+                        <div class="cards__name">BACKEND</div>
+                        <div class="cards__text">
+                            Siz bu kursni o'rganishingiz natijasida veb backend dasturchi bo'lib veb-saytlarni
+                            backendini 0 dan
+                            progacha tayyorlay olasiz!
+                        </div>
+                    </div>
+                </div>
+                <div class="courses__cards cards">
+                    <div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
+                        <div class="cards__img"><img src="{% static '/img/courses-4.png' %}" alt="image"></div>
+                        <div class="cards__name">PYTHON</div>
+                        <div class="cards__text">
+                            Siz bu kursni o'rganishingiz natijasida 6 oyda Python dasturchi bo'lasiz, xamda
+                            freelancer
+                            bo'lib ishlash
+                            imkoniyatiga xam ega bo'lasiz!
+                        </div>
+                    </div>
+                    <div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200">
+                        <div class="cards__img"><img src="{% static '/img/courses-5.png' %}" alt="image"></div>
+                        <div class="cards__name">Ingliz-tili</div>
+                        <div class="cards__text">
+                            Siz bu kursni 6 oy davomida o'rganib IELTS olish darajasigacha chiqasiz xamda Ingliz
+                            tilida
+                            ravon tushinib muloqat qilas olasiz!
+                        </div>
+                    </div>
+                    <div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
+                        <div class="cards__img"><img src="{% static '/img/courses-6.png' %}" alt="image"></div>
+                        <div class="cards__name">ANDROID</div>
+                        <div class="cards__text">
+                            Siz bu kursni o'rganishingiz natijasida Android Smartfonlar uchun xar qanday turdagi
+                            apklar
+                            yarata olasiz xamda
+                            IT firmalarda ishlash imkoniga ega bo'lasiz!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<main>
-		<div class="slider">
-			<div class="slider__title"><span>Bizning kursimiz</span> haqida <br>
-				o’quvchilarning fikri
-			</div>
-			<br>
-			<div class="slider__body">
-				<div class="slider__slick multiple-items">
-					<div class="slider__items items">
-						<img src="./img/Fulfilimg/komil.jpg" alt="images">
-						<div class="overlay"></div>
-						<div class="items__title">Komilbek Rasulov</div>
-						<div class="items__subtitle">Fulfil education asoschilari sizlarga
-							katta raxmat, kurslaringiz zo'r!
-						</div>
-					</div>
-					<div class="slider__items items">
-						<img src="./img/Fulfilimg/Gulxayo.jpg" alt="images">
-						<div class="overlay"></div>
-						<div class="items__title">Gulxayo Xamzayeva</div>
-						<div class="items__subtitle">MERN yo'nalish kursi juda zo'r ayniqsa uztozimiz tajribasi
-							Fulfil educationga raxmat!
-						</div>
-					</div>
-					<div class="slider__items items">
-						<img src="./img/Fulfilimg/Zoxriddin.jpg" alt="images">
-						<div class="overlay"></div>
-						<div class="items__title">Zoxriddin Tursunov</div>
-						<div class="items__subtitle">Sun'iy intllekt bo'yicha men
-							Fulfil education kurslaridan chuqur bilimlar egallayabman!
-						</div>
-					</div>
-					<div class="slider__items items">
-						<img src="./img/Fulfilimg/Xudoyberdi.jpg" alt="images">
-						<div class="overlay"></div>
-						<div class="items__title">Xudoyberdi Egamberdiyev</div>
-						<div class="items__subtitle">IT sohasiga kirib kelishimda asosiy motivatsiya manbai
-							bo'lgan Fulfil education!
-						</div>
-					</div>
-					<div class="slider__items items">
-						<img src="./img/Fulfilimg/The.jpg" alt="images">
-						<div class="overlay"></div>
-						<div class="items__title">Umidjon Ishquvvatov</div>
-						<div class="items__subtitle">Python kurslari zo'r
-							men sizlarga xam tavsiya qilaman, Fulfil education kurslarini!
-						</div>
-					</div>
-					<div class="slider__items items">
-						<img src="./img/Fulfilimg/Shoxrux.jpg" alt="images">
-						<div class="overlay"></div>
-						<div class="items__title">Toshmatov Eshmat</div>
-						<div class="items__subtitle">Fulfil educationda
-							o'qiyotganimdan juda ham xursandman, darslar zo'r!
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</main>
-	<footer>
-		<div class="footer" id="footer">
-			<div class="footer__body">
-				<div class="footer__items">
-					<div class="footer__item">
-						<div class="footer__item-logo"><img src="./img/icons/16-layers.png" alt="images"></div>
-						<div class="footer__item-links">
-							<i class="fa fa-facebook"></i>
-							<i class="fa fa-linkedin"></i>
-							<i class="fa fa-twitter"></i>
-						</div>
-					</div>
-					<div class="footer__item">
-						<div class="footer__item-number">
-							<p class="tel"> Telefon</p>
-							<p class="number">+998990882745</p>
+    <main>
+        <div class="slider">
+            <div class="slider__title"><span>Bizning kursimiz</span> haqida <br>
+                o’quvchilarning fikri
+            </div>
+            <br>
+            <div class="slider__body">
+                <div class="slider__slick multiple-items">
+                    <div class="slider__items items">
+                        <img src="{% static '/img/Fulfilimg/komil.jpg' %}" alt="images">
+                        <div class="overlay"></div>
+                        <div class="items__title">Komilbek Rasulov</div>
+                        <div class="items__subtitle">Fulfil education asoschilari sizlarga
+                            katta raxmat, kurslaringiz zo'r!
+                        </div>
+                    </div>
+                    <div class="slider__items items">
+                        <img src="{% static '/img/Fulfilimg/Gulxayo.jpg' %}" alt="images">
+                        <div class="overlay"></div>
+                        <div class="items__title">Gulxayo Xamzayeva</div>
+                        <div class="items__subtitle">MERN yo'nalish kursi juda zo'r ayniqsa uztozimiz tajribasi
+                            Fulfil educationga raxmat!
+                        </div>
+                    </div>
+                    <div class="slider__items items">
+                        <img src="{% static '/img/Fulfilimg/Zoxriddin.jpg' %}" alt="images">
+                        <div class="overlay"></div>
+                        <div class="items__title">Zoxriddin Tursunov</div>
+                        <div class="items__subtitle">Sun'iy intllekt bo'yicha men
+                            Fulfil education kurslaridan chuqur bilimlar egallayabman!
+                        </div>
+                    </div>
+                    <div class="slider__items items">
+                        <img src="{% static '/img/Fulfilimg/Xudoyberdi.jpg' %}" alt="images">
+                        <div class="overlay"></div>
+                        <div class="items__title">Xudoyberdi Egamberdiyev</div>
+                        <div class="items__subtitle">IT sohasiga kirib kelishimda asosiy motivatsiya manbai
+                            bo'lgan Fulfil education!
+                        </div>
+                    </div>
+                    <div class="slider__items items">
+                        <img src="{% static '/img/Fulfilimg/The.jpg' %}" alt="images">
+                        <div class="overlay"></div>
+                        <div class="items__title">Umidjon Ishquvvatov</div>
+                        <div class="items__subtitle">Python kurslari zo'r
+                            men sizlarga xam tavsiya qilaman, Fulfil education kurslarini!
+                        </div>
+                    </div>
+                    <div class="slider__items items">
+                        <img src="{% static '/img/Fulfilimg/Shoxrux.jpg' %}" alt="images">
+                        <div class="overlay"></div>
+                        <div class="items__title">Toshmatov Eshmat</div>
+                        <div class="items__subtitle">Fulfil educationda
+                            o'qiyotganimdan juda ham xursandman, darslar zo'r!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-							<p class="tel">Email</p>
-							<p class="number">suhrobabduaxatov@gmail.com</p>
-						</div>
-					</div>
-					<div class="footer__item">
-						<div class="footer__item-adress">
-							<p class="tel">Toshkentdagi Ofis</p>
-							<p class="number">Toshkent sh. Shayxontoxur r-n </p>
-
-							<p class="tel">Biz bilan bog'laning</p>
-							<p class="number">Ijtimoiy tarmoq saxiflarimiz</p>
-						</div>
-					</div>
-					<div class="footer__item">
-						<div class="footer__item-icons">
-							<i class="fa fa-instagram"></i>
-							<i class="fa fa-telegram"></i>
-							<i class="fa fa-youtube"></i>
-						</div>
-					</div>
-
-				</div>
-				Instant company &copy;
-				<script>document.write(new Date().getFullYear());</script>
-			</div>
-		</div>
-		</div>
-	</footer>
-
-
-
-	<!-- loading -->
-	<div class="loading">
-		<img src="./img/icons/16-layers.png" alt="layer">
-		<div class="lds-roller">
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-		</div>
-	</div>
-
-	<!-- scroll top btn -->
-
-	<div class="top">
-		<div class="goTop"><i class="fa fa-angle-up"></i></div>
-	</div>
-
-
-	<!--jQuery-->
-	<script src="jQuery/jquery.min.js"></script>
-	<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
-	<script src="jQuery/jQuery.js"></script>
-	<script src="./jQuery/slick.min.js"></script>
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-	<script src="./jQuery/three.r119.min.js"></script>
-	<script src="./jQuery/vanta.globe.min.js"></script>
-	<script src="./jQuery/vanta.net.min.js"></script>
-	<script src="./jQuery/vanta.rings.min.js"></script>
-
-	<!--/jQuery-->
-	<!--javascript-->
-	<script src="js/main.js"></script>
-	<!--/javascript-->
-</body>
-
-</html>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+{% block content %}
+	<div class="wrapper">
+        {% include 'include/header.html' %}
+		<section>
+			<div class="smm">
+				<div class="smm__body">
+					<div class="smm__items">
+
+						<div class="smm__item">
+							<div class="smm__item-title">{{ course.title }}</div>
+							<div class="smm__subtitle">
+								<p> <span>Davomiyligi</span> : {{ course.during }} oy</p>
+								<p> <span>O’qituvchi</span> : {{ course.teacher }}</p>
+								<p> <span>Narxi</span> : {{ course.price }} ming so’m / oyiga</p>
+							</div>
+						</div>
+
+						<div class="smm__text">
+							<p>{{ course.description }}</p>
+						</div>
+						<div class="smm__title">
+							Kursga yozilish uchun pastdagi bo’sh joylarni to’ldiring va <br> <span>biz siz bilan bog’lanamiz</span> 
+						</div>
+						<div class="smm__form">
+							<form method="post" action="">
+                                {% csrf_token %}
+                                {% render_field form.name type="text" placeholder="Ism, familiya" class="text" %}<br>
+                                {% render_field form.phone_number type="text" placeholder="Telefon raqam" class="tel" %}<br>
+                                {% render_field form.email type="email" placeholder="Email " name="email" class="email" %}<br>
+
+								<button type="submit" class="btn" >Jo’natish</button>
+							</form>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		
+
+	</div>
+	<div class="about__bg-img">
+		<img src="{% static '/img/about-bg.png' %}" alt="images" class="about__img">
+	</div>
+{% endblock %}
