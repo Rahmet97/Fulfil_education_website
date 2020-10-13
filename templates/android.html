@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+	{% block content %}
+	  
+	
+		<section>
+			<div class="smm">
+				<div class="smm__body">
+					<div class="smm__items">
+
+						<div class="smm__item">
+							<div class="smm__item-title">Android</div>
+							<div class="smm__subtitle">
+								<p> <span>Davomiyligi</span> : 5 oy</p>
+								<p> <span>O’qituvchi</span> : Shahzodbek Ilhomov</p>
+								<p> <span>Narxi</span> : 300 ming so’m / oyiga</p>
+							</div>
+						</div>
+
+						<div class="smm__text">
+							<p> Siz Malayziya tajribasi asosida zamonaviy kasbni o'rganasiz va kursdan keyin androidlar uchun xamda smartfonlar uchun xar qanday turdagi dasturlarni tuza olasiz kursni ishtiyoq bilan o'rganganlar uchun yirik maoshli ish topish muommo bo'lmaydi,
+								kursda Android, Java, Kotlin kabi bir necha dasturlash tillar o'rgatiladi, kurs o'quvchilarga ularni bilimini sinash uchun
+								xar doim nazorat testlari bo'lib o'tadi, biz bilan dasturlash tillarini mukammal o'rganing!
+							
+							</p>
+						</div>
+						<div class="smm__title">
+							Kursga yozilish uchun pastdagi bo’sh joylarni to’ldiring va <br> <span>biz siz bilan bog’lanamiz</span> 
+						</div>
+						<div class="smm__form">
+							<form action="#" method="POST" enctype="multipart/form-data">
+								{% csrf_token %}
+								{% if messages %}
+								  {% for message in messages %}
+									<strong>{{message}}</strong>
+								  {% endfor %} 
+								{% endif %}
+								{{form|crispy}}
+
+								<button type="submit" class="btn" >Jo’natish</button>
+							</form>
+							<br>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		
+
+	</div>
+	<div class="about__bg-img">
+		<img src="{% static 'img/about-bg.png'%}" alt="images" class="about__img">
+	</div>
+	{% endblock content %}
+	

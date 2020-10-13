@@ -1,0 +1,76 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  
+
+    <section style="margin-bottom: 70px">
+        <div class="courses wrapper">
+            <div class="courses__body">
+                <div class="courses__title page4" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">
+                    <button type="submit" style="color: gold; text-transform: uppercase;">Pro Kurslar</button>
+                </div>
+                <div class="courses__cards cards">
+                    <div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
+                        <div class="cards__img"><img src="{% static 'img/courses-1.png'%}" alt="image"></div>
+                        <div class="cards__name">SMM</div>
+                        <div class="cards__text">
+                            Siz bu kursni o'rganishingiz natijasida kuchli SMM mutaxasisi bo'lasiz xamda o'z SMM agentligingizga asos sola olasiz!
+                        </div>
+                        <div class="cards__btn"><a href="{% url 'smm' %}" style>Kurs haqida malumot!</a></div>
+
+                    </div>
+                    <div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200">
+                        <div class="cards__img"><img src="{% static 'img/courses-2.png'%}" alt="image"></div>
+                        <div class="cards__name">FRONTEND</div>
+                        <div class="cards__text">
+                            Siz bu kursni biz bilan 5 oy davomida mukammal o'rganishingiz va IT firmalarga ishga joylashish
+							imkoniyatiga ega bo'lishingiz mumkin!
+                        </div>
+                        <div class="cards__btn"><a href="{% url 'frontend'%}" style>Kurs haqida malumot!</a></div>
+                    </div>
+                    <div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
+                        <div class="cards__img"><img src="{% static 'img/courses-3.png'%}" alt="image"></div>
+                        <div class="cards__name">BACKEND</div>
+                        <div class="cards__text">
+                            Siz bu kursni o'rganishingiz natijasida veb backend dasturchi bo'lib veb-saytlarni backendini 0 dan
+							progacha tayyorlay olasiz!
+                        </div>
+                        <div class="cards__btn"><a href="{% url 'backend'%}" style>Kurs haqida malumot!</a></div>
+                    </div>
+                </div>
+                <div class="courses__cards cards">
+                    <div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
+                        <div class="cards__img"><img src="{% static 'img/courses-4.png'%}" alt="image"></div>
+                        <div class="cards__name">PYTHON</div>
+                        <div class="cards__text">
+                            Siz bu kursni o'rganishingiz natijasida 6 oyda Python dasturchi bo'lasiz, xamda freelancer bo'lib ishlash
+							imkoniyatiga xam ega bo'lasiz!
+                        </div>
+                        <div class="cards__btn"><a href="{% url 'python'%}" style>Kurs haqida malumot!</a></div>
+                    </div>
+                    <div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200">
+                        <div class="cards__img"><img src="{% static 'img/courses-5.png'%}" alt="image"></div>
+                        <div class="cards__name">Ingliz-tili</div>
+                        <div class="cards__text">
+                            Siz bu kursni 6 oy davomida o'rganib IELTS olish darajasigacha chiqasiz xamda Ingliz tilida ravon tushinib muloqat qilas olasiz!
+                        </div>
+                        <div class="cards__btn"><a href="{% url 'english'%}" style>Kurs haqida malumot!</a></div>
+                    </div>
+                    <div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
+                        <div class="cards__img"><img src="{% static 'img/courses-6.png'%}" alt="image"></div>
+                        <div class="cards__name">ANDROID</div>
+                        <div class="cards__text">
+                            Siz bu kursni o'rganishingiz natijasida Android Smartfonlar uchun xar qanday turdagi apklar yarata olasiz xamda  
+						    IT firmalarda ishlash imkoniga ega bo'lasiz!
+                        </div>
+                        <div class="cards__btn"><a href="{% url 'android'%}" style>Kurs haqida malumot!</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</div>
+{% endblock content %}
