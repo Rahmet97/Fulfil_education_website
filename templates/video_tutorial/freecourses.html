@@ -1,4 +1,4 @@
-{% extends 'video_tutorial/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
 
@@ -11,14 +11,19 @@
 				</div>
 
 				<div class="courses__cards cards">
-					{% for object in object_list %}
-					<div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
-						<div class="cards__img"><img src="{{ object.category_image.url }}" alt="image"></div>
-						<div class="cards__name">{{ object.category_name|upper }}</div>
-						<div class="cards__text"> {{ object.category_description|safe }} </div>
-						<div class="cards__btn"><a href="{% url 'Videos:video-course' object.id %}">Darslarni Ko’rish</a></div>
-					</div>
-					{% endfor %}
+					{% if object_list %}
+						{% for object in object_list %}
+						<div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
+							<div class="cards__img"><img src="{{ object.category_image.url }}" alt="image"></div>
+							<div class="cards__name">{{ object.category_name|upper }}</div>
+							<div class="cards__text"> {{ object.category_description|safe }} </div>
+							<div class="cards__btn"><a href="{% url 'Videos:video-course' object.id %}">Darslarni Ko’rish</a></div>
+						</div>
+						{% endfor %}
+					{% else %}
+						<p style="color: aliceblue; text-align: center;"><strong>Kategoriya Mavjudmas ;(</strong></p>					
+					{% endif %}
+
 				</div>
 			</div>
 		</div>

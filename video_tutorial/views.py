@@ -25,7 +25,7 @@ class VideoTutorialCategory(View):
     context = {}
     queryset = None
     def get(self, request, *args, **kwargs):
-        self.queryset = get_list_or_404(CourseCategory)
+        self.queryset =  CourseCategory.objects.all() #get_list_or_404(CourseCategory)
         self.context['object_list'] = self.queryset
         return render(
             request,
