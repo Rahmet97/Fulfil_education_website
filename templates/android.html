@@ -3,8 +3,8 @@
 {% load static %}
 
 	{% block content %}
-	  
-	
+
+
 		<section>
 			<div class="smm">
 				<div class="smm__body">
@@ -30,6 +30,7 @@
 							Kursga yozilish uchun pastdagi bo’sh joylarni to’ldiring va <br> <span>biz siz bilan bog’lanamiz</span> 
 						</div>
 						<div class="smm__form">
+							<div class="container">
 							<form action="#" method="POST" enctype="multipart/form-data">
 								{% csrf_token %}
 								{% if messages %}
@@ -41,6 +42,7 @@
 
 								<button type="submit" class="btn" >Jo’natish</button>
 							</form>
+						</div>
 							<br>
 						</div>
 

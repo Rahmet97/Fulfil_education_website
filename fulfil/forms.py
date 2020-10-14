@@ -13,7 +13,7 @@ class EnglishForm(forms.ModelForm):
         widgets = {
             'ism':forms.TextInput(attrs={'class':'form-control','placeholder':'Ism',}),
             'familya':forms.TextInput(attrs={'class':'form-control','placeholder':'Familya',}),
-            'telefon_raqam':forms.NumberInput(attrs={'class':'form-control','placeholder':'Telefon raqam',}),
+            'telefon_raqam':forms.TextInput(attrs={'class':'form-control','placeholder':'Telefon raqam',}),
             'email':forms.EmailInput(attrs={'class':'form-control','placeholder':'Email',})
 
         }
@@ -27,7 +27,7 @@ class SMMCourseForm(forms.ModelForm):
         widgets = {
             'ism':forms.TextInput(attrs={'class':'form-control','placeholder':'Ism',}),
             'familya':forms.TextInput(attrs={'class':'form-control','placeholder':'Familya',}),
-            'telefon_raqam':forms.NumberInput(attrs={'class':'form-control','placeholder':'Telefon raqam',}),
+            'telefon_raqam':forms.TextInput(attrs={'class':'form-control','placeholder':'Telefon raqam',}),
             'email':forms.EmailInput(attrs={'class':'form-control','placeholder':'Email',})
 
         }
@@ -41,7 +41,7 @@ class FrontendForm(forms.ModelForm):
         widgets = {
             'ism':forms.TextInput(attrs={'class':'form-control','placeholder':'Ism',}),
             'familya':forms.TextInput(attrs={'class':'form-control','placeholder':'Familya',}),
-            'telefon_raqam':forms.NumberInput(attrs={'class':'form-control','placeholder':'Telefon raqam',}),
+            'telefon_raqam':forms.TextInput(attrs={'class':'form-control','placeholder':'Telefon raqam',}),
             'email':forms.EmailInput(attrs={'class':'form-control','placeholder':'Email',})
 
         }        
@@ -56,7 +56,7 @@ class BackendForm(forms.ModelForm):
         widgets = {
             'ism':forms.TextInput(attrs={'class':'form-control','placeholder':'Ism',}),
             'familya':forms.TextInput(attrs={'class':'form-control','placeholder':'Familya',}),
-            'telefon_raqam':forms.NumberInput(attrs={'class':'form-control','placeholder':'Telefon raqam',}),
+            'telefon_raqam':forms.TextInput(attrs={'class':'form-control','placeholder':'Telefon raqam',}),
             'email':forms.EmailInput(attrs={'class':'form-control','placeholder':'Email',})
 
         }                
@@ -71,7 +71,7 @@ class PythonForm(forms.ModelForm):
         widgets = {
             'ism':forms.TextInput(attrs={'class':'form-control','placeholder':'Ism',}),
             'familya':forms.TextInput(attrs={'class':'form-control','placeholder':'Familya',}),
-            'telefon_raqam':forms.NumberInput(attrs={'class':'form-control','placeholder':'Telefon raqam',}),
+            'telefon_raqam':forms.TextInput(attrs={'class':'form-control','placeholder':'Telefon raqam',}),
             'email':forms.EmailInput(attrs={'class':'form-control','placeholder':'Email',})
 
         }
@@ -87,7 +87,7 @@ class AndroidForm(forms.ModelForm):
         widgets = {
             'ism':forms.TextInput(attrs={'class':'form-control','placeholder':'Ism',}),
             'familya':forms.TextInput(attrs={'class':'form-control','placeholder':'Familya',}),
-            'telefon_raqam':forms.NumberInput(attrs={'class':'form-control','placeholder':'Telefon raqam',}),
+            'telefon_raqam':forms.TextInput(attrs={'class':'form-control','placeholder':'Telefon raqam',}),
             'email':forms.EmailInput(attrs={'class':'form-control','placeholder':'Email',})
 
         }
