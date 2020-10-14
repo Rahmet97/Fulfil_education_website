@@ -113,8 +113,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': "fulfil_education",
-        'USER': 'jamshid',
-        'PASSWORD': '',
+        'USER': 'admin',
+        'PASSWORD': '123456',
         'HOST': 'localhost',
     }
 }
