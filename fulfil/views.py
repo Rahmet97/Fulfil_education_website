@@ -10,11 +10,12 @@ from .forms import EnglishForm,SMMCourseForm,FrontendForm,BackendForm,PythonForm
 def english_form(request):
     form = EnglishForm(request.POST)
     if request.method == 'POST':
-        form = EnglishForm(request.POST or None)
+        form = EnglishForm(request.POST )
         if form.is_valid():
             form.save()
             messages.success(request, "Muvaffaqiyatli o'tdingiz")
             return redirect('english')
+        
     form = EnglishForm()
     context = {'form':form} 
     return render(request, 'english.html',context)       
@@ -75,14 +76,16 @@ def backend_course(request):
 def python_course(request):
     form = PythonForm(request.POST)
     if request.method == 'POST':
-        form = PythonForm(request.POST or None)
+        print(request.POST)
+        form = PythonForm(request.POST)
         if form.is_valid():
-            form.save()
-            messages.success(request , "Muvaffaqiyatli o'tdingiz")
+            obj=form.save(commit=False)
+            obj.save()
+            messages.success(request, "Muvaffaqiyatli o'tdingiz")
             return redirect('python')
-    form = PythonForm()
-    context = {'form':form} 
-    return render(request,'python.html',context)       
+    form = PythonForm()        
+    context = {'form':form}
+    return render(request, 'python.html', context)    
 
 
 
