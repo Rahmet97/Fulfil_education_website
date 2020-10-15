@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 from fulfil_education import settings
 from .models import Teacher, Course
-from .forms import CourseForm
+from .forms import CourseForm, FeedbackForm
 
 
 def index(request):
@@ -39,9 +39,34 @@ def course_detail(request, pk):
                 return HttpResponse('Invalid header')
             return redirect('home')
         else:
-            HttpResponse("Formani to'ldirishda xatolikka yo'l qo'yildi")
+            return redirect('course_detail')
     context = {
         'course': course,
         'form': form
     }
     return render(request, 'course_detail.html', context)
+
+
+def feedback(request):
+    if request.method == 'GET':
+        form = FeedbackForm()
+    else:
+        form = FeedbackForm(request.POST)
+        if form.is_valid():
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
+            email = form.cleaned_data['email']
+            phone_number = form.cleaned_data['phone_number']
+            text = form.cleaned_data['text']
+            try:
+                send_mail(f'{first_name} {last_name}', f"{text}\nTel: {phone_number}\nEmail: {email}",
+                          settings.EMAIL_HOST_USER, ['example@gmail.com'])
+            except BadHeaderError:
+                return HttpResponse('Invalid header')
+            return redirect('home')
+        else:
+            return redirect('feedback')
+    context = {
+        'form': form
+    }
+    return render(request, 'aloqa.html', context)

@@ -1,201 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- scroll animation link -->
-	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	<!-- icons-link -->
-	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<!--data-picker-->
-	<!-- style-link -->
-	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/main.css">
-	<title>Aloqa</title>
-</head>
-<body>
-
-<div class="wrapper">
-	<header class="wow animate__animated animate__bounce">
-		<div class="navbar" id="navbar">
-			<div class="navbar__body">
-				<div class="navbar__item">
-					<div class="navbar__logo"><a href="#"><img src="./img/icons/16-layers.png" alt="logo"></a></div>
-					<div class="navbar__burger active-burger">
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
-					<ul class="navbar__links hide">
-						<li><a href="./index.html" class="navbar__link">Bosh sahifa</a></li>
-						<li><a href="./teachers.html" class="navbar__link ">O’qituvchilar </a></li>
-						<li><a href="./cources.html" class="navbar__link">Kurslar </a></li>
-						<li><a href="./freecourses.html" class="navbar__link">Video darslar </a></li>
-						<li><a href="./about.html" class="navbar__link">Biz haqimizda</a></li>
-						<li><a href="./blog.html" class="navbar__link">Blog</a></li>
-						<li><a href="./aloqa.html" class="navbar__link active">Aloqa</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</header>
-</div>
-<section>
-	<div class="communication wrapper">
-		<div class="communication__title" data-aos="fade-up" data-aos-duration="2000">Biz bilan bog'lanish uchun
-			pastdagi <br> <span>formani to'ldiring </span></div>
-		<div class="communication__items item">
-			<form action="#">
-				<div class="items__body">
-					<label for="FullName input_text">Ismingiz</label>
-					<div class="items__name">
-						<input type="text" id="FullName" name="FullName" placeholder="Ismingiz ... " required>
-						<span><img src="img/user.png" alt=""></span>
-					</div>
-				</div>
-				<div class="items__body">
-					<label for="surName">Familiyangiz</label>
-					<div class="items__name">
-						<input type="text" id="surName" name="surName" placeholder="Familiyangiz ... " required>
-						<span><img src="img/user.png" alt=""></span>
-					</div>
-				</div>
-				<div class="items__body">
-					<label for="datepicker">Tug'ilgan Sanangiz</label>
-					<div class="items__name">
-						<input type="date" id="datepicker" name="data" placeholder="Tug'ilgan Sanangiz... " required>
-						<span><img src="img/calendar.png" alt=""></span>
-					</div>
-				</div>
-				<div class="items__body">
-					<label for="email">Email</label>
-					<div class="items__name">
-						<input type="email" id="email" name="email" placeholder="Email... " required>
-						<span><img src="img/email.png" alt=""></span>
-					</div>
-				</div>
-				<div class="items__body">
-					<label for="call">Telefon Raqamingiz</label>
-					<div class="items__name">
-						<input type="number" id="call" name="call" placeholder="Telefon Raqamingiz ..." required>
-						<span><img src="img/call.png" alt=""></span>
-					</div>
-				</div>
-				<div class="items__body__area">
-					<label for="call" class="communication__title">Bizga yubormoqchi bo'lgan xabaringizni yozing va
-						<span>Yuborish</span> tugmasini bosing</label>
-					<div class="items__name">
-						<textarea name=""></textarea>
-					</div>
-				</div>
-				<div class="items__body">
-					<a href="#">
-						<button type="submit" class="btn__submit">Yuborish</button>
-					</a>
-				</div>
-			</form>
-		</div>
-	</div>
-</section>
-
-<main>
-	<div class="bg">
-		<div class="bg__images">
-			<img src="./img/Vector_2.png" alt="images" class="bg-img1">
-			<img src="./img/Polygon%202.png" alt="images" class="bg-img2">
-			<img src="./img/Ellipse_10.png" alt="images" class="img7">
-		</div>
-
-	</div>
-</main>
-
-<footer>
-	<div class="footer" id="footer">
-		<div class="footer__body">
-			<div class="footer__items">
-				<div class="footer__item">
-					<div class="footer__item-logo"><img src="./img/icons/16-layers.png" alt="images"></div>
-					<div class="footer__item-links">
-						<i class="fa fa-facebook"></i>
-						<i class="fa fa-linkedin"></i>
-						<i class="fa fa-twitter"></i>
-					</div>
-				</div>
-				<div class="footer__item">
-					<div class="footer__item-number">
-						<p class="tel"> Telefon</p>
-						<p class="number">+998990882745</p>
-						
-						<p class="tel">Email</p>
-						<p class="number">suhrobabduaxatov@gmail.com</p>
-					</div>
-				</div>
-				<div class="footer__item">
-					<div class="footer__item-adress">
-						<p class="tel">Toshkentdagi Ofis</p>
-						<p class="number">Toshkent sh. Shayxontoxur r-n </p>
-						
-						<p class="tel">Biz bilan bog'laning</p>
-						<p class="number">Ijtimoiy tarmoq saxiflarimiz</p>
-					</div>
-				</div>
-				<div class="footer__item">
-					<div class="footer__item-icons">
-						<i class="fa fa-instagram"></i>
-						<i class="fa fa-telegram"></i>
-						<i class="fa fa-youtube"></i>
-					</div>
-				</div>
-				
-			</div>
-			Instant company &copy; <script>document.write(new Date().getFullYear());</script>
-		</div>
-	</div>
-</div>
-</footer>
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
 
 
-<!-- loading -->
-<div class="loading">
-	<img src="./img/icons/16-layers.png" alt="Loading ...">
-	<div class="lds-roller">
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-	</div>
-</div>
-<!-- scroll top btn -->
-	<div class="top">
-		<div class="goTop"><i class="fa fa-angle-up"></i></div>
-	</div>
-	
-<!--jQuery-->
-<script src="jQuery/jquery.min.js"></script>
-<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
-<script src="jQuery/jQuery.js"></script>
-<script src="./jQuery/slick.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+{% block title %}Aloqa{% endblock %}
 
-<script src="./jQuery/three.r119.min.js"></script>
-<script src="./jQuery/vanta.globe.min.js"></script>
-<script src="./jQuery/vanta.net.min.js"></script>
-<script src="./jQuery/vanta.rings.min.js"></script>
-<!--datapicker pastdagi-->
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<!--/jQuery-->
-<!--javascript-->
-<script src="js/main.js"></script>
-<!--/javascript-->
 
-</body>
+{% block content %}
+    <div class="wrapper">
+        {% include 'include/header.html' %}
+    </div>
+    <section>
+        <div class="communication wrapper">
+            <div class="communication__title" data-aos="fade-up" data-aos-duration="2000">Biz bilan bog'lanish uchun
+                pastdagi <br> <span>formani to'ldiring </span></div>
+            <div class="communication__items item">
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <div class="items__body">
+                        <label for="FullName input_text">Ismingiz</label>
+                        <div class="items__name">
+{#                            <input type="text" id="FullName" name="FullName" placeholder="Ismingiz ... " required>#}
+                            {% render_field form.first_name type="text" id="FullName" name="FullName" placeholder="Ismingiz ... " %}
+                            <span><img src="{% static 'img/user.png' %}" alt=""></span>
+                        </div>
+                    </div>
+                    <div class="items__body">
+                        <label for="surName">Familiyangiz</label>
+                        <div class="items__name">
+{#                            <input type="text" id="surName" name="surName" placeholder="Familiyangiz ... " required>#}
+                            {% render_field form.last_name type="text" id="surName" name="surName" placeholder="Familiyangiz ... " %}
+                            <span><img src="{% static 'img/user.png' %}" alt=""></span>
+                        </div>
+                    </div>
+                    <div class="items__body">
+                        <label for="email">Email</label>
+                        <div class="items__name">
+{#                            <input type="email" id="email" name="email" placeholder="Email... " required>#}
+                            {% render_field form.email type="email" id="email" name="email" placeholder="Email..." %}
+                            <span><img src="{% static 'img/email.png' %}" alt=""></span>
+                        </div>
+                    </div>
+                    <div class="items__body">
+                        <label for="call">Telefon Raqamingiz</label>
+                        <div class="items__name">
+{#                            <input type="number" id="call" name="call" placeholder="Telefon Raqamingiz ..." required>#}
+                            {% render_field form.phone_number type="number" id="call" name="call" placeholder="Telefon Raqamingiz ..." %}
+                            <span><img src="{% static 'img/call.png' %}" alt=""></span>
+                        </div>
+                    </div>
+                    <div class="items__body__area">
+                        <label for="call" class="communication__title">Bizga yubormoqchi bo'lgan xabaringizni yozing va
+                            <span>Yuborish</span> tugmasini bosing</label>
+                        <div class="items__name">
+{#                            <textarea name=""></textarea>#}
+                            {% render_field form.text %}
+                        </div>
+                    </div>
+                    <div class="items__body">
+                        <a href="#">
+                            <button type="submit" class="btn__submit">Yuborish</button>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 
-</html>
+    <main>
+        <div class="bg">
+            <div class="bg__images">
+                <img src="{% static '/img/Vector_2.png' %}" alt="images" class="bg-img1">
+                <img src="{% static '/img/Polygon 2.png' %}" alt="images" class="bg-img2">
+                <img src="{% static '/img/Ellipse_10.png' %}" alt="images" class="img7">
+            </div>
+
+        </div>
+    </main>
+
+{% endblock %}
