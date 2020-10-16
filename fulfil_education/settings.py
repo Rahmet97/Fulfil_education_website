@@ -112,10 +112,10 @@ WSGI_APPLICATION = 'fulfil_education.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': "fulfil_education",
-        'USER': 'admin',
-        'PASSWORD': '123456',
-        'HOST': 'localhost',
+        'NAME': "fulfil_database",
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
     }
 }
 
