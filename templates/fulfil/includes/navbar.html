@@ -14,13 +14,13 @@
 
                 <!-- burger bg animation /-->
                 <ul class="navbar__links hide">
-                    <li><a href="./index.html" class="navbar__link active">Bosh sahifa</a></li>
-                    <li><a href="./teachers.html" class="navbar__link">O’qituvchilar </a></li>
-                    <li><a href="./cources.html" class="navbar__link">Kurslar </a></li>
+                    <li><a href="{% url 'FulFil:home' %}" class="navbar__link active">Bosh sahifa</a></li>
+                    <li><a href="{% url 'Pro_Tutorial:teacher-list' %}" class="navbar__link">O’qituvchilar </a></li>
+                    <li><a href="{% url 'Pro_Tutorial:tutorial-category' %}" class="navbar__link">Kurslar </a></li>
                     <li><a href="{% url 'Videos:video-category' %}" class="navbar__link">Video darslar </a></li>
-                    <li><a href="./about.html" class="navbar__link">Biz haqimizda</a></li>
-                    <li><a href="./blog.html" class="navbar__link">Blog</a></li>
-                    <li><a href="./aloqa.html" class="navbar__link">Aloqa</a></li>
+                    <li><a href="{% url 'FulFil:about' %}" class="navbar__link">Biz haqimizda</a></li>
+                    <li><a href="{% url 'FulFil:blog' %}" class="navbar__link">Blog</a></li>
+                    <li><a href="{% url 'FulFil:contact' %}" class="navbar__link">Aloqa</a></li>
                 </ul>
             </div>
         </div>

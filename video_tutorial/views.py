@@ -4,19 +4,12 @@ from django.shortcuts import render, redirect, get_object_or_404, get_list_or_40
 from django.core.paginator import Paginator
 
 from django.views import View
-from django.views.generic import (
-    ListView,
-    DetailView,
-    UpdateView,
-    CreateView,
-    DetailView,
-)
-
 
 from .models import (
     CourseCategory,
     VideoCourse,
 )
+# from .forms import *
 
 # Create your views here.
 
@@ -25,7 +18,7 @@ class VideoTutorialCategory(View):
     context = {}
     queryset = None
     def get(self, request, *args, **kwargs):
-        self.queryset =  CourseCategory.objects.all() #get_list_or_404(CourseCategory)
+        self.queryset = CourseCategory.objects.all()
         self.context['object_list'] = self.queryset
         return render(
             request,
@@ -53,8 +46,8 @@ class VideoTutorial(View):
 
 	def get(self, request, id=None, *args, **kwargs):
 		
-		video_object_list  = None
-		category_object    = None
+		video_object_list = None
+		category_object   = None
 	
 		category_object, video_list = self.get_object()
 
@@ -67,7 +60,7 @@ class VideoTutorial(View):
 
 		self.context['video_object_list'] = video_object_list
 		self.context['category_object']   = category_object
-		self.context['page_indexes']      = page_indexes
+		self.context['page_indexes']	  = page_indexes
 		
 		return render(
             request,

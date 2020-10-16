@@ -69,10 +69,13 @@ INSTALLED_APPS = [
 
     # 3rd party apps
     'tinymce',
+    'widget_tweaks',
 
     # local apps
     'fulfil.apps.FulfilConfig',
     'video_tutorial.apps.VideoTutorialConfig',
+    'pro_tutorial.apps.ProTutorialConfig',
+    # 'teacher.apps.TeacherConfig',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,70 @@
+{% extends 'fulfil/base.html' %}
+{% load static %}
+{% block title %}O'qtuvchilar{% endblock %}
+	
+{% block content %}
+<section>
+	<div class="teachers wrapper">
+		<div class="teachers__title" data-aos="fade-up" data-aos-duration="2000">Bizning <span>o’qituvchilar jamoasi </span>bilan tanishing </div>
+		<div class="teachers__body">
+			<div class="teachers__items">
+
+				{% if teachers_list %}
+				
+					{% for teacher in teachers_list %}
+
+						{% if forloop.counter|divisibleby:2 %}
+							<div class="teachers__item item" data-aos="fade-right" data-aos-duration="2000">
+								{% if teacher.teacher_image %}
+									<div class="item__img"><img src="{{ teacher.teacher_image.url }}" alt="images" class="even"></div>
+								{% endif %}
+								<div class="item__text">
+									<div class="item__title">{{ teacher.teacher_name|safe }}</div>
+									<div class="item__subtitle">
+										{{ teacher.teacher_info|safe }}
+									</div>
+								</div>
+							</div>
+						{% else %}
+							<div class="teachers__item item" data-aos="fade-left" data-aos-duration="2000">
+								{% if teacher.teacher_image %}
+									<div class="item__img"><img src="{{ teacher.teacher_image.url }}" alt="images"></div>
+								{% endif %}
+								<div class="item__text">
+									<div class="item__title">{{ teacher.teacher_name|safe }}</div>
+									<div class="item__subtitle">
+										{{ teacher.teacher_info|safe }}
+									</div>
+								</div>
+							</div>
+						{% endif %}
+
+					{% endfor %}
+
+				{% else %}
+					<p><strong>O'qtuvchilar Ro'yhati Mavjud Emas ;(</strong></p>
+				{% endif %}
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<main>
+	<div class="bg">
+		<div class="bg__images">
+			<img src="{% static 'img/bgImg-1.png' %}" alt="images" class="bg-img1">
+			<img src="{% static 'img/bgImg-2.png' %}" alt="images" class="bg-img2">
+			<img src="{% static 'img/bgImg-3.png' %}" alt="images" class="bg-img3">
+			<img src="{% static 'img/bgEllipse-1.png' %}" alt="images" class="bg-img4">
+			<img src="{% static 'img/bgEllipse-2.png' %}" alt="images" class="bg-img5">
+			<img src="{% static 'img/bgEllipse-3.png' %}" alt="images" class="bg-img6">
+			<img src="{% static 'img/bgEllipse-4.png' %}" alt="images" class="bg-img7">
+			<img src="{% static 'img/bgEllipse-5.png' %}" alt="images" class="bg-img8">
+			<img src="{% static 'img/bgEllipse-6.png' %}" alt="images" class="bg-img9">
+		</div>
+
+	</div>
+</main>
+
+{% endblock content %}

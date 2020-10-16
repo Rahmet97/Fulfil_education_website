@@ -4,7 +4,7 @@ from django.shortcuts import reverse
 
 
 class CourseCategory(models.Model):
-    category_image       = models.ImageField(upload_to="images/%Y/%m/%d/", blank=True, null=True, verbose_name='Kategoriya Rasmi:',)
+    category_image       = models.ImageField(upload_to="video_category/%Y/%m/%d/", blank=True, null=True, verbose_name='Kategoriya Rasmi:',)
     category_name        = models.CharField(max_length=200, verbose_name="Kategoriya Nomi:", unique=True)
     category_description = models.TextField(verbose_name="Kategoriya Tarifi:")
 
