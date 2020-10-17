@@ -1,6 +1,6 @@
 {% extends 'fulfil/base.html' %}
 {% load static %}
-{% block title %}Pullik Kurslar{% endblock title %}
+{% block title %}Pro Courses{% endblock title %}
 {% block content %}
 
     <section style="margin-bottom: 70px">
@@ -33,7 +33,7 @@
         </div>
     </section>
 
-    {% if course_object_list.has_previous and course_object_list.has_next %}
+    {% if course_object_list.has_previous or course_object_list.has_next %}
         <div class="pages-numb">
             <hr>
             <!-- <a href="#!" class="active">1</a> -->

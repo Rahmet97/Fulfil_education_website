@@ -1,8 +1,9 @@
 {% extends 'fulfil/base.html' %}
 {% load static %}
-{% block title %}Video Kurslar{% endblock %}
+{% block title %}{{ category_object }} Videos{% endblock %}
 
 {% block content %}
+<div class="wrapper">
 	<section>
 		<div class="videos">
 			<div class="videos__body">
@@ -13,6 +14,7 @@
 						{% for object in video_object_list %}
 						<div class="videos__card">
 							<div class="videos__card-video"><iframe src="{{ object.video_url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+							<div class="videos__card-text"><p style="margin-top: 15px; font-size: large;">{{ object.video_name }}</p></div>
 							<!-- <p>{{ object.video_name }}</p> -->
 						</div>
 						{% endfor %}
@@ -33,5 +35,6 @@
 			<hr>	
 		</div>
 	{% endif %}
+</div>
    	
 {% endblock content %}
