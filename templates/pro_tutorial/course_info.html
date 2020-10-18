@@ -42,11 +42,19 @@
 									Kursga yozilish uchun pastdagi bo’sh joylarni to’ldiring va <br> <span>biz siz bilan bog’lanamiz</span> 
 								</div>
 								<div class="smm__form">
-									<form method="post" action="">
+									<form method="POST" action="">
+										
 										{% csrf_token %}
-										{% render_field form.name type="text" placeholder="Ism, familiya" class="text" %}<br>
-										{% render_field form.phone_number type="text" placeholder="Telefon raqam" class="tel" %}<br>
-										{% render_field form.email type="email" placeholder="Email " name="email" class="email" %}<br>
+										{{ form.non_field_errors }}
+										
+										{{ form.name.errors }}
+										{{ form.name }}<br>
+										
+										{{ form.phone.errors }}
+										{{ form.phone_number }}<br>
+										
+										{{ form.email.errors }}
+										{{ form.email }}<br>
 		
 										<button type="submit" class="btn" >Jo’natish</button>
 									</form>
