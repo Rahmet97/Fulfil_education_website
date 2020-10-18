@@ -41,17 +41,19 @@ from django.conf import settings
 from fulfil_education import settings
 
 class Contact(View):
-    template_name='fulfil/aloqa.html'
-    context = {}
+    template_name ='fulfil/aloqa.html'
+    context       = {}
 
     def get(self, request, *args, **kwargs):
-        form = FeedbackForm()
+        form                 = FeedbackForm()
         self.context['form'] = form
+        
         return render(
             request,
             self.template_name,
             self.context
         )
+    
     def post(self, request, *args, **kwargs):
         if request.method == "POST":
             form = FeedbackForm(request.POST)
@@ -63,9 +65,9 @@ class Contact(View):
                 text         = form.cleaned_data['text']
                 print(first_name, last_name, email, phone_number, text)
                 try:
-                    subject = f"{first_name} {last_name}"
-                    thoughts = f"{text}\nTel: {phone_number}\nEmail: {email}"
-                    sender = settings.EMAIL_HOST_USER
+                    subject    = f"{first_name} {last_name}"
+                    thoughts   = f"{text}\nTel: {phone_number}\nEmail: {email}"
+                    sender     = settings.EMAIL_HOST_USER
                     recipients = ['example@gmail.com']
 
                     send_mail(subject, thoughts, sender, recipients, fail_silently=False)
@@ -78,35 +80,13 @@ class Contact(View):
         self.context = {
             'form': form
         }
+        
         return render(
             request, 
             self.template_name,
             self.context
         )
 
-def feedback(request):
-    if request.method == 'GET':
-        form = FeedbackForm()
-    else:
-        form = FeedbackForm(request.POST)
-        if form.is_valid():
-            first_name = form.cleaned_data['first_name']
-            last_name = form.cleaned_data['last_name']
-            email = form.cleaned_data['email']
-            phone_number = form.cleaned_data['phone_number']
-            text = form.cleaned_data['text']
-            try:
-                send_mail(f'{first_name} {last_name}', f"{text}\nTel: {phone_number}\nEmail: {email}",
-                          settings.EMAIL_HOST_USER, ['example@gmail.com'])
-            except BadHeaderError:
-                return HttpResponse('Invalid header')
-            return redirect('FulFil:contact')
-        else:
-            return redirect('FulFil:contact')
-    context = {
-        'form': form
-    }
-    return render(request, 'fulfil/aloqa.html', context)
 
 # Class Based Blog View
 class Blog(View):
