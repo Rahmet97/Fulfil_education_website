@@ -46,6 +46,7 @@ class Contact(View):
 
     def get(self, request, *args, **kwargs):
         form = FeedbackForm()
+        self.context['form'] = form
         return render(
             request,
             self.template_name,
@@ -55,14 +56,20 @@ class Contact(View):
         if request.method == "POST":
             form = FeedbackForm(request.POST)
             if form.is_valid():
-                first_name = form.cleaned_data['first_name']
-                last_name = form.cleaned_data['last_name']
-                email = form.cleaned_data['email']
+                first_name   = form.cleaned_data['first_name']
+                last_name    = form.cleaned_data['last_name']
+                email        = form.cleaned_data['email']
                 phone_number = form.cleaned_data['phone_number']
-                text = form.cleaned_data['text']
+                text         = form.cleaned_data['text']
+                print(first_name, last_name, email, phone_number, text)
                 try:
-                    send_mail(f'{first_name} {last_name}', f"{text}\nTel: {phone_number}\nEmail: {email}",
-                            settings.EMAIL_HOST_USER, ['example@gmail.com'])
+                    subject = f"{first_name} {last_name}"
+                    thoughts = f"{text}\nTel: {phone_number}\nEmail: {email}"
+                    sender = settings.EMAIL_HOST_USER
+                    recipients = ['example@gmail.com']
+
+                    send_mail(subject, thoughts, sender, recipients, fail_silently=False)
+
                 except BadHeaderError:
                     return HttpResponse('Invalid header')
                 return redirect('FulFil:contact')
