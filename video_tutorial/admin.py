@@ -48,7 +48,7 @@ class CourseCategoryAdmin(admin.ModelAdmin):
         }),
     )
     formfield_overrides={
-        models.TextField : {'widget' : TinyMCE},
+        models.TextField : {'widget' : TinyMCE()},
     }
 
 

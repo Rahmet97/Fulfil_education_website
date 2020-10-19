@@ -53,7 +53,7 @@ class ProCourseNameAmin(admin.ModelAdmin):
         }),
     )
     formfield_overrides = {
-        models.TextField : {'widget' : TinyMCE}
+        models.TextField : {'widget' : TinyMCE()}
     }
 
 admin.site.register(ProCourseName, ProCourseNameAmin)

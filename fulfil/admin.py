@@ -22,7 +22,7 @@ class NewsAdmin(admin.ModelAdmin):
         }),
     )
     formfield_overrides = {
-        models.TextField : {'widget' : TinyMCE}
+        models.TextField : {'widget' : TinyMCE()}
     }
 
 admin.site.register(News, NewsAdmin)
