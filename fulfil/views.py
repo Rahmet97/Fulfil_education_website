@@ -34,7 +34,7 @@ def course_detail(request, pk):
             try:
                 send_mail(name,
                           f'{name} {course.teacher}ning {course.title} kursiga qatnashmoqchi.\n Tel:{phone_number}\nEmail{email}',
-                          settings.EMAIL_HOST_USER, ['@example.com'])
+                          settings.EMAIL_HOST_USER, ['@example..com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header')
             return redirect('home')
