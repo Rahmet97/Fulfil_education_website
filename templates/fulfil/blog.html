@@ -1,0 +1,65 @@
+{% extends 'fulfil/base.html' %}
+{% load static %}
+{% block title %}News{% endblock title %}
+			
+{% block content %}
+	<div class="wrapper">
+		<section>
+			<div class="blogs">
+				<div class="blogs__body">
+					<div class="blogs__title"><span>Bloglarimizni</span> kuzatib boring</div>
+
+					<div class="blogs__items">
+						
+						{% if news_list %}
+						
+							{% for object in news_list %}
+								<div class="blogs__card" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
+									<a href="{{ object.blog_url }}">
+										<div class="blogs__card-img"><img src="{{ object.blog_image.url }}" alt="images"></div>
+										<div class="blogs__card-text">{{ object.blog_description|safe }}</div>
+									</a>
+								</div>
+							{% endfor %}
+
+						{% else %}
+							<p><strong>Yangilklar Mavjud Emas ;(</strong></p>
+						{% endif %}
+						
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		{% if news_list.has_previous and news_list.has_next %}
+			<div class="pages-numb">
+				<!-- <a href="#!" class="active">1</a>
+				<a href="#!">2</a>
+				<a href="#!">3</a> -->
+				<hr>
+				<!-- <a href="#!" class="active">1</a> -->
+				{% include "fulfil/includes/pagination.html" %} 
+				<hr>	
+			</div>
+		{% endif %}
+	</div>
+
+
+	<main>
+		<div class="background">
+			<div class="background__images">
+				<img src="{% static 'img/Vector_1.png' %}" alt="images" class="img1">
+				<img src="{% static 'img/Vector_2.png' %}" alt="images" class="img2">
+				<img src="{% static 'img/Ellipse_10.png' %}" alt="images" class="img3">
+				<img src="{% static 'img/Vector_3.png' %}" alt="images" class="img4">
+				<img src="{% static 'img/2-layers-3.png' %}" alt="images" class="img5">
+				<img src="{% static 'img/2-layers-2.png' %}" alt="images" class="img6">
+				<img src="{% static 'img/2-layers-4.png' %}" alt="images" class="img7">
+				<img src="{% static 'img/2-layers-5.png' %}" alt="images" class="img8">
+
+			</div>
+		</div>
+	</main>
+
+{% endblock content %}

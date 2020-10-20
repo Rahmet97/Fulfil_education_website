@@ -1,0 +1,5 @@
+O'qtuvchilar page, Blog page - footer
+in fulfil app , class based Contact view doesnt work
+in pro_course app , class based Course_Info view must be chacked 
+Paginations in blog.html, video-course.html, courses.html must be chacked
+

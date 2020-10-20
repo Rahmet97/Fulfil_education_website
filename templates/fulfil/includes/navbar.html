@@ -1,0 +1,28 @@
+{% load static %}
+<header class="wow animate__animated animate__bounce">
+    <div class="navbar" id="navbar">
+        <div class="navbar__body">
+            <div class="navbar__item">
+                <div class="navbar__logo"><a href="#"><img src="{% static 'img/icons/16-layers.png' %}" alt="image"></a></div>
+                <div class="navbar__burger active-burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <!-- burger bg animation -->
+
+
+                <!-- burger bg animation /-->
+                <ul class="navbar__links hide">
+                    <li><a href="{% url 'FulFil:home' %}" class="navbar__link active">Bosh sahifa</a></li>
+                    <li><a href="{% url 'Pro_Tutorial:teacher-list' %}" class="navbar__link">O’qituvchilar </a></li>
+                    <li><a href="{% url 'Pro_Tutorial:tutorial-category' %}" class="navbar__link">Kurslar </a></li>
+                    <li><a href="{% url 'Videos:video-category' %}" class="navbar__link">Video darslar </a></li>
+                    <li><a href="{% url 'FulFil:about' %}" class="navbar__link">Biz haqimizda</a></li>
+                    <li><a href="{% url 'FulFil:blog' %}" class="navbar__link">Blog</a></li>
+                    <li><a href="{% url 'FulFil:contact' %}" class="navbar__link">Aloqa</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>

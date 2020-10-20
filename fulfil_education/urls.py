@@ -20,6 +20,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include("fulfil.urls")),
+    path('tinymce/', include('tinymce.urls')),
+
+    path('', include('fulfil.urls')),
+    path('videos/', include('video_tutorial.urls')),
+    path('courses/', include('pro_tutorial.urls')),
+    # path('teachers/', include('teacher.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

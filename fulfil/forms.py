@@ -1,64 +1,57 @@
-from django.contrib.auth.forms import forms
-from django.forms import ModelForm
-from .models import English,Smm_course,Frontend,Backend,Python,Android
-from django.forms.widgets import Widget
-from django.utils.translation import ugettext_lazy as _
+from django import forms
 
-
-
-
-
-class EnglishForm(forms.ModelForm):
-    
-    class Meta:
-        model = English
-        fields = [
-            'ism','familya','telefon_raqam','email'
-        ]
-      
-
-class SMMCourseForm(forms.ModelForm):
-    class Meta:
-        model = Smm_course
-        fields = [
-            'ism','familya','telefon_raqam','email'
-        ]
-      
-
-class FrontendForm(forms.ModelForm):
-    class Meta:
-        model = Frontend
-        fields = [
-            'ism','familya','telefon_raqam','email'
-        ]
-             
-
-
-class BackendForm(forms.ModelForm):
-    class Meta:
-        model = Backend
-        fields = [
-            'ism','familya','telefon_raqam','email'
-        ]
-                     
-
-
-class PythonForm(forms.ModelForm):
-    class Meta:
-        model = Python
-        fields = [
-            'ism','familya','telefon_raqam','email'
-        ]
-       
-   
-
-class AndroidForm(forms.ModelForm):
-    
-    class Meta:
-        model = Android
-        fields = [
-            'ism','familya','telefon_raqam','email'
-        ]
-     
-
-
+class FeedbackForm(forms.Form):
+    first_name   = forms.CharField(
+                 max_length=25,
+                 widget=forms.TextInput(
+                        attrs={
+                            'type': "text",
+                            'id'  : "FullName",
+                            'name': "FullName",
+                            'placeholder': "Ismingizni kiriting",
+                            # required
+                        }
+                     )
+                 )
+    last_name    = forms.CharField(
+                 max_length=25,
+                 widget=forms.TextInput(
+                        attrs={
+                            'type': "text",
+                            'id'  : "surName",
+                            'name': "surName",
+                            'placeholder': "Familiyangizni kiriting",
+                            # required
+                        }
+                     )
+                 )
+    email        = forms.EmailField(
+                 widget=forms.EmailInput(
+                        attrs={
+                            'type': "email",
+                            'id'  : "email",
+                            'name': "email",
+                            'placeholder': "Elektron pochtangizni kiriting",
+                        }
+                     )
+                 )
+    phone_number = forms.CharField(
+                 max_length=25,
+                 widget=forms.TextInput(
+                        attrs={
+                            'type': "text",
+                            'id'  : "call",
+                            'name': "call",
+                            'placeholder': "Telefon Raqamingizni kiriting",
+                            # required
+                        }
+                     )
+                 )
+    text         = forms.CharField(
+                 widget=forms.Textarea(
+                        attrs={
+                            "name": "",
+                            "placeholder" : "Fikir mulohaza va takliflaringizni kiriting"
+                        }
+                    )
+                 )

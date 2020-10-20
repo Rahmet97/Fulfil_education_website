@@ -1,0 +1,80 @@
+
+{% extends 'fulfil/base.html' %}
+{% load static %}
+{% block title %}Course Info{% endblock title %}
+
+
+
+{% block content %}
+	<div class="wrapper">
+		<section>
+			<div class="smm">
+				<div class="smm__body">
+					{% if course_info %}
+
+						{% for course in course_info %}
+						
+							<div class="smm__items">
+
+								<div class="smm__item">
+									<div class="smm__item-title">{{ course.course_name|upper }}</div>
+									<div class="smm__subtitle">
+
+										{% if course.course_duration %}
+										<p> <span>Davomiyligi</span> :  {{ course.course_duration|safe }}</p>
+										{% endif %}
+										{% if course.course_teacher %}
+											<p> <span>O’qituvchi</span> :  {{ course.course_teacher|safe }}</p>
+										{% endif %}
+										{% if course.course_coast %}
+											<p> <span>Narxi</span> :  {{ course.course_coast|safe }}</p>
+										{% endif %}
+										
+									</div>
+								</div>
+
+								<div class="smm__text">
+									<p> 
+										{{ course.course_description|safe }}
+									</p>
+								</div>
+								<div class="smm__title">
+									Kursga yozilish uchun pastdagi bo’sh joylarni to’ldiring va <br> <span>biz siz bilan bog’lanamiz</span> 
+								</div>
+								<div class="smm__form">
+									<form method="POST" action="">
+										
+										{% csrf_token %}
+										{{ form.non_field_errors }}
+										
+										{{ form.name.errors }}
+										{{ form.name }}<br>
+										
+										{{ form.phone.errors }}
+										{{ form.phone_number }}<br>
+										
+										{{ form.email.errors }}
+										{{ form.email }}<br>
+		
+										<button type="submit" class="btn" >Jo’natish</button>
+									</form>
+								</div>
+
+							</div>
+
+						{% endfor %}
+					{% else %}
+						<p><strong>Kurslar Haqida Malumot Mavjud Emas ;(</strong></p>
+					{% endif %}
+
+				</div>
+			</div>
+		</section>
+
+		
+
+	</div>
+	<div class="about__bg-img">
+		<img src="{% static 'img/about-bg.png' %}" alt="images" class="about__img">
+	</div>
+{% endblock content %}

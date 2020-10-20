@@ -400,7 +400,11 @@ body {
 }
 
 .cards__item {
-  margin: 20px;
+  /* margin: 20px; */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 40px;
+  margin-left: 40px;
 }
 
 .cards__img {
@@ -1767,7 +1771,12 @@ footer .fa {
 }
 
 .videos__card {
-  margin: 0 20px 50px;
+  /* margin: 0 20px 50px; */
+
+  margin-top: 50px;
+  margin-bottom: 40px;
+  margin-right: 50px;
+  margin-left: 40px;
 }
 
 .videos__card-video {

@@ -1,0 +1,104 @@
+{% extends 'fulfil/base.html' %}
+{% load static %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block content %}
+
+<section>
+	<div class="communication wrapper">
+		<div class="communication__title" data-aos="fade-up" data-aos-duration="2000">Biz bilan bog'lanish uchun pastdagi <br> <span>formani to'ldiring </span></div>
+		<div class="communication__items item">
+			
+			<form method="POST" action="">
+				
+				{% csrf_token %}
+
+				{{ form.non_field_errors }}
+				
+				<div class="items__body">
+					<label for="FullName input_text">Ismingiz</label>
+					<div class="items__name">
+							
+							{#<input type="text" id="FullName" name="FullName" placeholder="Ismingiz ... " required>#}
+
+							{{ form.first_name.errors }}
+							{{ form.first_name }}
+
+						<span><img src="{% static 'img/user.png' %}" alt=""></span>
+					</div>
+				</div>
+				<div class="items__body">
+					<label for="surName">Familiyangiz</label>
+					<div class="items__name">
+						
+						{#<input type="text" id="surName" name="surName" placeholder="Familiyangiz ... " required>#}
+						
+						{{ form.last_name.errors }}
+						{{ form.last_name }}
+
+						<span><img src="{% static 'img/user.png' %}" alt=""></span>
+					</div>
+				</div>
+				<div class="items__body">
+					<label for="email">Email</label>
+					<div class="items__name">
+						
+						{#<input type="email" id="email" name="email" placeholder="Email... " required>#}
+						
+						{{ form.email.errors }}
+						{{ form.email }}
+
+						<span><img src="{% static 'img/email.png' %}" alt=""></span>
+					</div>
+				</div>
+				<div class="items__body">
+					<label for="call">Telefon Raqamingiz</label>
+					<div class="items__name">
+						
+						{#<input type="text" id="call" name="call" placeholder="Telefon Raqamingiz ..." required>#}
+						
+						{{ form.phone_number.errors }}
+						{{ form.phone_number }}
+
+						<span><img src="{% static 'img/call.png' %}" alt=""></span>
+					</div>
+				</div>
+
+				<div class="items__body__area">
+					<label for="call" class="communication__title">Bizga yubormoqchi bo'lgan xabaringizni yozing va
+						<span>Yuborish</span> tugmasini bosing</label>
+					<div class="items__name">
+						
+						{#<textarea name=""></textarea>#}
+						
+						{{ form.text.errors }}
+						{{ form.text }}
+
+					</div>
+				</div>
+
+				<div class="items__body">
+					<a href="#">
+						<button type="submit" class="btn__submit">Yuborish</button>
+					</a>
+				</div>
+
+			</form>
+			
+		</div>
+	</div>
+</section>
+
+<main>
+	<div class="bg">
+		<div class="bg__images">
+			<img src="{% static '/img/Vector_2.png' %}" alt="images" class="bg-img1">
+			<img src="{% static '/img/Polygon 2.png' %}" alt="images" class="bg-img2">
+			<img src="{% static '/img/Ellipse_10.png' %}" alt="images" class="img7">
+		</div>
+
+	</div>
+</main>
+  
+{% endblock content %}

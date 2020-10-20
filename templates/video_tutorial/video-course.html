@@ -1,0 +1,40 @@
+{% extends 'fulfil/base.html' %}
+{% load static %}
+{% block title %}{{ category_object }} Videos{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+	<section>
+		<div class="videos">
+			<div class="videos__body">
+				<div class="videos__title"><span>{{ category_object }}</span> darslari</div>
+				<div class="videos__items">
+					
+					{% if video_object_list %}
+						{% for object in video_object_list %}
+						<div class="videos__card">
+							<div class="videos__card-video"><iframe src="{{ object.video_url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+							<div class="videos__card-text"><p style="margin-top: 15px; font-size: large;">{{ object.video_name }}</p></div>
+							<!-- <p>{{ object.video_name }}</p> -->
+						</div>
+						{% endfor %}
+					{% else %}
+						<p style="color: aliceblue; text-align: center;"><strong>Video Mavjud Emas ;(</strong></p>
+					{% endif %}
+					
+				</div>
+			</div>
+		</div>
+	</section>
+    
+   {% if video_object_list.has_previous or video_object_list.has_next %} 
+		<div class="pages-numb">
+			<hr>
+			<!-- <a href="#!" class="active">1</a> -->
+			{% include "video_tutorial/includes/pagination.html" %} 
+			<hr>	
+		</div>
+	{% endif %}
+</div>
+   	
+{% endblock content %}

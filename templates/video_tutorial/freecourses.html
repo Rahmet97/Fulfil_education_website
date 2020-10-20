@@ -1,0 +1,41 @@
+{% extends 'fulfil/base.html' %}
+{% load static %}
+{% block title %}Video Courses{% endblock %}
+
+{% block content %}
+
+<div class="wrapper">
+
+	<section style="margin-bottom: 70px">
+		<div class="courses wrapper">
+			<div class="courses__body">
+				<div class="courses__title page4" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">
+					<span>Bepul</span> video darslar 
+				</div>
+
+				<div class="courses__cards cards">
+					{% if object_list %}
+						{% for object in object_list %}
+							<div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
+								
+								{% if object.category_image %}
+									<div class="cards__img"><img src="{{ object.category_image.url }}" alt="image"></div>
+								{% endif %}
+								
+								<div class="cards__name">{{ object.category_name|upper }}</div>
+								<div class="cards__text"> {{ object.category_description|truncatewords:15|safe }} </div>
+								<div class="cards__btn"><a href="{% url 'Videos:video-course' object.id %}">Darslarni Ko’rish</a></div>
+							</div>
+						{% endfor %}
+					{% else %}
+						<p style="color: aliceblue; text-align: center;"><strong>Video Kurslar Mavjud Emas ;(</strong></p>					
+					{% endif %}
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+</div>
+
+{% endblock content %}
