@@ -5,3 +5,4 @@ mysqlclient==2.0.1
 Pillow==8.0.0
 pytz==2020.1
 sqlparse==0.4.1
+django-widget-tweaks==1.4.8
