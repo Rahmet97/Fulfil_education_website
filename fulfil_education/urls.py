@@ -18,6 +18,10 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from pro_tutorial.views import Teachers_List
+
+app_name="Main_URL"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
@@ -25,6 +29,7 @@ urlpatterns = [
     path('', include('fulfil.urls')),
     path('videos/', include('video_tutorial.urls')),
     path('courses/', include('pro_tutorial.urls')),
-    # path('teachers/', include('teacher.urls')),
+
+    path('teachers/', Teachers_List.as_view(), name="teacher-list"),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

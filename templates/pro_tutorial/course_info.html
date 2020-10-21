@@ -10,8 +10,7 @@
 		<section>
 			<div class="smm">
 				<div class="smm__body">
-					{% if course_info %}
-
+					
 						{% for course in course_info %}
 						
 							<div class="smm__items">
@@ -47,26 +46,23 @@
 										{% csrf_token %}
 										{{ form.non_field_errors }}
 										
-										{{ form.name.errors }}
-										{{ form.name }}<br>
+										{{ form.pupil_name.errors }}
+										{{ form.pupil_name }}<br>
 										
-										{{ form.phone.errors }}
-										{{ form.phone_number }}<br>
+										{{ form.pupil_phonenumber.errors }}
+										{{ form.pupil_phonenumber }}<br>
 										
-										{{ form.email.errors }}
-										{{ form.email }}<br>
-		
+										{{ form.pupil_email.errors }}
+										{{ form.pupil_email }}<br>
 										<button type="submit" class="btn" >Jo’natish</button>
 									</form>
 								</div>
 
 							</div>
-
+						{% empty %}
+						    <p><strong>Kurslar Haqida Malumot Mavjud Emas ;(</strong></p>
 						{% endfor %}
-					{% else %}
-						<p><strong>Kurslar Haqida Malumot Mavjud Emas ;(</strong></p>
-					{% endif %}
-
+					
 				</div>
 			</div>
 		</section>

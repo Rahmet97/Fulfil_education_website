@@ -46,3 +46,20 @@ class ProCourseInfo(models.Model):
 
     def __str__(self):
         return f"{self.course_name}"
+
+
+class Pupil(models.Model):
+    pupil_name        = models.CharField(max_length=150, verbose_name="O\'quvchi Ismi:")
+    pupil_phonenumber = models.CharField(max_length=9, verbose_name="Tel Raqami:", unique=True)
+    pupil_email       = models.EmailField(max_length=100, verbose_name="Email:", blank=True, null=True, unique=True)
+    join_date         = models.DateTimeField(auto_now_add=True, verbose_name="Ariza Sanasi:")
+
+    teacher_name = models.ForeignKey(Teacher, related_name='teacher', blank=True, null=True, on_delete=models.SET_NULL, verbose_name="O\'qtuvchi Ismi:")
+    course_name  = models.ForeignKey(ProCourseName, related_name='course', blank=True, null=True, on_delete=models.SET_NULL, verbose_name="Kurs Nomi:")
+
+    class Meta:
+        ordering            = ["course_name"]
+        verbose_name_plural = 'O\'quvchilar'
+
+    def __str__(self):
+        return f"{self.course_name}"

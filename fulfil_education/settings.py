@@ -25,7 +25,7 @@ SECRET_KEY = 'p(%j!g3_6bx$%ordcb@y^u61kq$$vkcyhnhb3_=c98%8+ba_hu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # TinyMCE Configurations
 TINYMCE_DEFAULT_CONFIG = {

@@ -11,8 +11,6 @@
 		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<!-- spesific style for tiynmce -->
 	<link rel="stylesheet" href="{% static 'tinymce/css/prism.css' %}">
-	{# <link rel="stylesheet" href="{% static 'css/materialize.css' %}"> #}
-	{# <link rel="stylesheet" href="{% static 'css/MaterializeCss.css' %}"> #}
 	<!-- style-link -->
 	<link rel="stylesheet" href="{% static 'css/normalize.css' %}">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -37,6 +35,9 @@
 	{% include "fulfil/includes/footer.html" %}
 
 
+	<div class="top">
+		<div class="goTop"><i class="fa fa-angle-up"></i></div>
+	</div>
 
 	<!-- loading -->
 	<div class="loading">
@@ -55,10 +56,6 @@
 
 	<!-- scroll top btn -->
 
-	<div class="top">
-		<div class="goTop"><i class="fa fa-angle-up"></i></div>
-	</div>
-
 
 	<!--jQuery-->
 	<script src="{% static 'jQuery/jquery.min.js' %}"></script>
@@ -75,10 +72,8 @@
 	<!--/jQuery-->
 	<!-- spesific script for tinymce -->
 	<script src="{% static 'tinymce/js/prism.js' %}"></script>
-	{# <script src="{% static 'main/js/MaterializeJs.js' %}"></script> #}
 	<!--javascript-->
 	<script src="{% static 'js/main.js' %}"></script>
 	<!--/javascript-->
 </body>
-{# <script>M.AutoInit();</script> #}
 </html>
