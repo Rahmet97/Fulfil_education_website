@@ -33,7 +33,6 @@ class CourseForm(forms.ModelForm):
                           }
                         )
                       )
-    
     class Meta:
         model= Pupil
         fields = (
@@ -43,7 +42,7 @@ class CourseForm(forms.ModelForm):
             'teacher_name', 
             'course_name', 
         )
-    
+
     def clean_pupil_phonenumber(self, *args, **kwargs):
         pupil_phonenumber = self.cleaned_data.get('pupil_phonenumber')
         p_all = Pupil.objects.all()
@@ -52,7 +51,7 @@ class CourseForm(forms.ModelForm):
         if pupil_phonenumber in phone_number:
             # print("Error phone")
             raise forms.ValidationError('This phone-number is already exist.')
-        elif len(str(pupil_phonenumber)) == 9:
+        elif not len(str(pupil_phonenumber)) == 9:
             # print("Error phone")
             raise forms.ValidationError('Phone-number must consists of 9 number.')
         return pupil_phonenumber

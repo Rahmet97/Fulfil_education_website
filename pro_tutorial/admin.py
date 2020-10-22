@@ -64,8 +64,8 @@ admin.site.register(ProCourseName, ProCourseNameAmin)
 
 
 class PupilAdmin(admin.ModelAdmin):
-    list_display       = ('course_name', 'pupil_phonenumber', 'pupil_email', 'join_date', 'teacher_name', 'pupil_name', )
-    list_display_links = ('pupil_name', 'pupil_phonenumber', 'pupil_email', 'join_date', 'course_name', )
+    list_display       = ('course_name', 'teacher_name', 'pupil_name', 'pupil_phonenumber', 'pupil_email', 'join_date', )
+    list_display_links = ('course_name', 'pupil_name', 'pupil_phonenumber', 'pupil_email', 'join_date', )
     search_fields      = ('pupil_name', 'teacher_name', 'course_name', )
     list_editable      = ('teacher_name',)
     ordering           = ('pupil_name', 'pupil_phonenumber', 'pupil_email', 'join_date', 'teacher_name', 'course_name', )

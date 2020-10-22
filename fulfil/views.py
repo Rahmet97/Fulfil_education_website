@@ -64,7 +64,7 @@ class Contact(View):
                 email        = form.cleaned_data['email']
                 phone_number = form.cleaned_data['phone_number']
                 text         = form.cleaned_data['text']
-                print(first_name, last_name, email, phone_number, text)
+
                 try:
                     subject    = f"{first_name} {last_name}"
                     thoughts   = f"{text}\nTel: {phone_number}\nEmail: {email}"
@@ -77,8 +77,8 @@ class Contact(View):
                     return HttpResponse('Invalid header')
                 return redirect('FulFil:contact')
             else:
-                for msg in form.error_messages:
-                    messages.error(request, f"{msg}: {form.error_messages[msg]}")
+                for msg in form.errors:
+                    messages.error(request, f"{msg}")
                 return redirect('FulFil:contact')
         self.context = {
             'form': form

@@ -10,8 +10,8 @@
                     <button type="submit" style="color: gold; text-transform: uppercase;">Pro Kurslar</button>
                 </div>
                 <div class="courses__cards cards">
-                    {% if course_object_list %}
-                        {% for course_object in course_object_list %}
+                   
+                    {% for course_object in course_object_list %}
                             <div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
                                 
                                 {% if course_object.pro_course_image %}
@@ -24,10 +24,9 @@
                                 </div>
                                 <div class="cards__btn"><a href="{% url 'Pro_Tutorial:course-tutorial' course_object.id %}" style>Kurs haqida malumot!</a></div>
                             </div>
-                        {% endfor %}
-                        {% else %}
+                    {% empty %}
                             <p style="color: aliceblue; text-align: center;"><strong>Kurslar Mavjud Emas ;(</strong></p>
-                    {% endif %}
+                    {% endfor %}
                 </div>
             </div>
         </div>

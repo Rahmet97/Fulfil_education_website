@@ -65,7 +65,7 @@ class Course_Info(View):
         form            = CourseForm()
         queryset_course = None
         queryset_course = self.get_object()
-        
+
         self.context['course_info']  = queryset_course
         self.context['form']         = form
 		
@@ -76,30 +76,27 @@ class Course_Info(View):
         )
 
     def post(self, request, id=None, *args, **kwargs):
+        
         # TEACHER NAME
         course     = self.get_object()
         t_name     = [c.course_teacher for c in course]
         teacher_n  = t_name[0]
         # TEACHER NAME
- 
+        
         if teacher_n:
             self.teacher_name = Teacher.objects.get(teacher_name=teacher_n) # TEACHER instance
         self.course_name  = ProCourseName.objects.get(id=id) # COURSE instance
         
         if request.method == "POST":
-            form = CourseForm(request.POST)
+            form = CourseForm(request.POST, initial=[{"teacher_name": self.teacher_name, "course_name": self.course_name}])
             if form.is_valid():
                 name         = form.cleaned_data['pupil_name']
                 email        = form.cleaned_data['pupil_email']
                 phone_number = form.cleaned_data['pupil_phonenumber']
-                form.save()
-                new_form = Pupil.objects.create(pupil_name=name, pupil_phonenumber=phone_number, pupil_email=email,  course_name=self.course_name, teacher_name=self.teacher_name,) # teacher_name=t_name,
-                if new_form.is_valid():
-                    new_form.save() # save new pupil info to the database
-                else:
-                    for msg in new_form.error_messages:
-                        messages.error(request, f"{msg}: {form.error_messages[msg]}")
-                # send_mail(name, f'{name} {self.course_name.pro_course_name} kursga qatnashmoqchi.\n Tel:{phone_number}\nEmail{email}', settings.EMAIL_HOST_USER, ['@example.com'])
+                
+                form = Pupil.objects.create(pupil_name=name, pupil_phonenumber=phone_number, pupil_email=email,  course_name=self.course_name, teacher_name=self.teacher_name,)
+                form.save() # save new pupil info to the database
+                
                 try:
                     
                     # sending email to the host
@@ -107,22 +104,24 @@ class Course_Info(View):
                     # ------- HOST -------
                     
                     # sending email to the applier
-                    send_mail('FulFil Education', f'siz {self.course_name} kursga yozildingiz. \nMurojat uchun: \nTel: 998683826;', settings.EMAIL_HOST_USER, email)
+                    send_mail('FulFil Education', f'siz {self.course_name} kursga yozildingiz. \nMurojat uchun: \nTel: 998683826;', settings.EMAIL_HOST_USER, [email])
                     messages.success(request, f"{name} xabaringiz muvofaqiyatli yuborildi.")
                     # ------- APPLIER -------
-                    
-                    # new_form.save() # save new pupil info to the database
 
                 except BadHeaderError:
                     return HttpResponse(f'Invalid header')
 
-                return render("Pro_Tutorial:course-tutorial", id)
+                return redirect("Pro_Tutorial:course-tutorial", id)
 
             else:
+                print("Errors", form.errors)
                 for msg in form.errors:
                     messages.error(request, f"{msg} - already exist.")
+        else:
+            form = CourseForm()
 
         self.context = {
+            'course_info':course,
             'form': form
         }
         return render(
