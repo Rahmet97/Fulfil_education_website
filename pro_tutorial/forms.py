@@ -8,7 +8,7 @@ class CourseForm(forms.ModelForm):
 											widget=forms.TextInput(
 												attrs={
 													 "type": "text", 
-													 "placeholder": "FISH", 
+													 "placeholder": "F.I.SH.", 
 													 "class": "text",
 													 }
 												)
@@ -18,7 +18,7 @@ class CourseForm(forms.ModelForm):
 											widget=forms.TextInput(
 												attrs={
 													 "type": "text", # type must be number 
-													 "placeholder": "(__) ___ __ __", 
+													 "placeholder": "+998 __ ___ __ __", 
 													 "class": "tel",
 													}
 												)
@@ -51,9 +51,9 @@ class CourseForm(forms.ModelForm):
 				if pupil_phonenumber in phone_number:
 						# print("Error phone")
 						raise forms.ValidationError('This phone-number is already exist.')
-				elif not len(str(pupil_phonenumber)) == 9:
+				elif not len(str(pupil_phonenumber)) == 12:
 						# print("Error phone")
-						raise forms.ValidationError('Phone-number must consists of 9 number.')
+						raise forms.ValidationError('Phone-number must consists of 12 number.')
 				return pupil_phonenumber
 		
 		def clean_pupil_email(self, *args, **kwargs):

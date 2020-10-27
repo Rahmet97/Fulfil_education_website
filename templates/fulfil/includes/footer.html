@@ -1,4 +1,65 @@
 {% load static %}
+
+<style>
+    @media (min-width: 320px) and (max-width: 414px) {
+        .footer__item-number {
+            margin-bottom: 22px;
+        }
+        .footer__item .tel {
+            margin: 2px;
+        }
+        .footer__item-number .number {
+            margin-bottom: 22px;
+        }
+        .main__item img {
+            margin-top: 40px;
+        }
+    }
+    .haqida {
+        height: 660px;
+    }
+    .header-anime {
+        height: 470px;
+    }
+    .info__title {
+        margin-top: 150px;
+    }
+    .courses__title {
+        margin-top: 100px;
+    }
+    .footer__body {
+        padding: 18px 20px !important;
+    }
+ 
+    .slider__title {
+        margin: 56px 70px;
+    }
+    .teachers .item__img img {
+        margin: -43px 0  4px !important;
+    }
+    .teachers {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+    }
+    .bg .bg-img7, .bg-img8, .bg-img9 {
+        display: none;
+    }
+    .background {
+        display: none;
+    }
+    /* .background .img3, .img5, .img6, .img7, .img8 {
+        display: none;
+    } */
+    .blogs {
+        display: flex;
+        flex-direction: column;
+    }
+    .blogs__items, .courses {
+    
+        min-height: 50vh;
+    }
+</style>
 <footer>
     <div class="footer" id="footer">
         <div class="footer__body">
@@ -26,7 +87,7 @@
                         <p class="number">Toshkent sh. Shayxontoxur r-n </p>
 
                         <p class="tel">Biz bilan bog'laning</p>
-                        <p class="number">Ijtimoiy tarmoq saxiflarimiz</p>
+                        <p class="number">Ijtimoiy tarmoq saxifalarimiz</p>
                     </div>
                 </div>
                 <div class="footer__item">
@@ -38,8 +99,9 @@
                 </div>
 
             </div>
-            Instant company &copy;
-            <script>document.write(new Date().getFullYear());</script>
+            <div class="footer__docum" style="text-align: center; margin: 10px 0;">Sayt yaratuvchi: Instant company &copy;<span></span></div>
+            
+            
         </div>
     </div>
     </div>

@@ -104,7 +104,7 @@ class Course_Info(View):
                     # ------- HOST -------
                     
                     # sending email to the applier
-                    send_mail('FulFil Education', f'siz {self.course_name} kursga yozildingiz. \nMurojat uchun: \nTel: 998683826;', settings.EMAIL_HOST_USER, [email])
+                    send_mail('FulFil Education', f'Siz {self.course_name} kursiga yozildingiz. \nMurojat uchun: \nTel: 998683826;', settings.EMAIL_HOST_USER, [email])
                     messages.success(request, f"{name} xabaringiz muvofaqiyatli yuborildi.")
                     # ------- APPLIER -------
 

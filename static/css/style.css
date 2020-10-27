@@ -18,7 +18,7 @@ body {
 
 .header-anime {
   position: absolute;
-  height: 75vh;
+  height: 470px;
   width: 100%;
   top: 0;
   left: 0;
@@ -373,6 +373,8 @@ body {
 
 .about__item-img {
   margin: 0 0 76px 15px;
+  width: 450px;
+  object-fit: cover;
 }
 
 .courses__title {
@@ -710,7 +712,9 @@ body {
   font-weight: 700;
   margin: 0 0 45px 0;
 }
-
+footer .footer__docum {
+  text-align: center;
+}
 .footer__item-logo img {
   width: 180px;
 }

@@ -8,7 +8,7 @@ burger.addEventListener("click", (e) => {
 
 const loading = document.querySelector('.loading');
 
-// loading.style.display = 'none'
+//  loading.style.display = 'none'
 
 setTimeout(() => {
 	loading.style.display = 'none'
@@ -45,5 +45,8 @@ window.addEventListener('scroll', (e) => {
 	}
 });
 
-
+function year() {
+	document.querySelector('.footer__docum span').innerHTML = (new Date().getFullYear());
+}	
+year();
 

@@ -19,6 +19,7 @@
     color: #faff00;
     font-size: 22px;
 }
+
 .info__card-subtitle{
     font-size: 14px;
     width: 200px;
@@ -105,3 +106,5 @@
     background-image: url(../img/Fulfilimg/Zoxriddin.jpg);
     background-position: center;
  }
+
+ 
