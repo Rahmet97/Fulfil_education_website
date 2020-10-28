@@ -207,120 +207,86 @@
     <div class="courses wrapper">
         <div class="courses__body">
             <div class="courses__title" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">
-                <span>Pullik</span> kurslar </div>
-            <div class="courses__cards cards">
-                <div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
-                    <div class="cards__img"><img src="{% static 'img/courses-1.png' %}" alt="image"></div>
-                    <div class="cards__name">SMM</div>
-                    <div class="cards__text">
-                        Siz bu kursni o'rganishingiz natijasida kuchli SMM mutaxasisi bo'lasiz hamda o'z SMM agentligingizga asos sola olasiz!
-                    </div>
-                </div>
-                <div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200">
-                    <div class="cards__img"><img src="{% static 'img/courses-2.png' %}" alt="image"></div>
-                    <div class="cards__name">FRONTEND</div>
-                    <div class="cards__text">
-                        Siz bu kursni biz bilan 5 oy davomida mukammal o'rganishingiz va IT firmalarga ishga joylashish
-                        imkoniyatiga ega bo'lishingiz mumkin!
-                    </div>
-                </div>
-                <div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
-                    <div class="cards__img"><img src="{% static 'img/courses-3.png' %}" alt="image"></div>
-                    <div class="cards__name">BACKEND</div>
-                    <div class="cards__text">
-                        Siz bu kursni o'rganishingiz natijasida veb backend dasturchi bo'lib veb-saytlarni backend qismini 0 dan
-                        progacha tayyorlay olasiz!
-                    </div>
-                </div>
+                <span>Pullik</span> kurslar 
             </div>
+                
             <div class="courses__cards cards">
-                <div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
-                    <div class="cards__img"><img src="{% static 'img/courses-4.png' %}" alt="image"></div>
-                    <div class="cards__name">PYTHON</div>
-                    <div class="cards__text">
-                        Siz bu kursni o'rganishingiz natijasida 6 oyda Python dasturchi bo'lasiz, hamda freelancer bo'lib ishlash
-                        imkoniyatiga ham ega bo'lasiz!
+                    
+                {% for obj in pro_course_list %}
+                    <div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
+                        <div class="cards__img"><img src="{{ obj.pro_course_image.url }}" alt="image"></div>
+                        <div class="cards__name">{{ obj.pro_course_name|upper }}</div>
+                        <div class="cards__text">
+                            {{ obj.pro_course_description|safe }}
+                        </div>
                     </div>
-                </div>
-                <div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200">
-                    <div class="cards__img"><img src="{% static 'img/courses-5.png' %}" alt="image"></div>
-                    <div class="cards__name">Ingliz-tili</div>
-                    <div class="cards__text">
-                        Siz bu kursni 6 oy davomida o'rganib IELTS olish darajasigacha chiqasiz hamda Ingliz tilida ravon tushunib muloqat qila olasiz!
-                    </div>
-                </div>
-                <div class="cards__item" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300">
-                    <div class="cards__img"><img src="{% static 'img/courses-6.png' %}" alt="image"></div>
-                    <div class="cards__name">ANDROID</div>
-                    <div class="cards__text">
-                        Siz bu kursni o'rganishingiz natijasida Android Smartfonlar uchun har qanday turdagi mobil dasturlar yarata olasiz hamda  
-                        IT firmalarda ishlash imkoniga ega bo'lasiz!
-                    </div>
-                </div>
+                {% endfor %}
             </div>
+
         </div>
     </div>
 </section>
-
-<main>
-    <div class="slider">
-        <div class="slider__title"><span>Bizning kursimiz</span> haqida <br>
-            o’quvchilarning fikri
-        </div>
-        <br>
-        <div class="slider__body">
-            <div class="slider__slick multiple-items">
-                <div class="slider__items items">
-                    <img src="{% static 'img/Fulfilimg/komil.jpg' %}" alt="images">
-                    <div class="overlay"></div>
-                    <div class="items__title">Komilbek Rasulov</div>
-                    <div class="items__subtitle">Fulfil education asoschilari sizlarga
-                        katta raxmat, kurslaringiz zo'r!
-                    </div>
-                </div>
-                <div class="slider__items items">
-                    <img src="{% static 'img/Fulfilimg/Gulxayo.jpg' %}" alt="images">
-                    <div class="overlay"></div>
-                    <div class="items__title">Gulxayo Xamzayeva</div>
-                    <div class="items__subtitle">MERN yo'nalish kursi juda zo'r ayniqsa uztozimiz tajribasi
-                        Fulfil educationga raxmat!
-                    </div>
-                </div>
-                <div class="slider__items items">
-                    <img src="{% static 'img/Fulfilimg/Zoxriddin.jpg' %}" alt="images">
-                    <div class="overlay"></div>
-                    <div class="items__title">Zoxriddin Tursunov</div>
-                    <div class="items__subtitle">Sun'iy intllekt bo'yicha men
-                        Fulfil education kurslaridan chuqur bilimlar egallayabman!
-                    </div>
-                </div>
-                <div class="slider__items items">
-                    <img src="{% static 'img/Fulfilimg/Xudoyberdi.jpg' %}" alt="images">
-                    <div class="overlay"></div>
-                    <div class="items__title">Xudoyberdi Egamberdiyev</div>
-                    <div class="items__subtitle">IT sohasiga kirib kelishimda asosiy motivatsiya manbai
-                        bo'lgan Fulfil education!
-                    </div>
-                </div>
-                <div class="slider__items items">
-                    <img src="{% static 'img/Fulfilimg/The.jpg' %}" alt="images">
-                    <div class="overlay"></div>
-                    <div class="items__title">Umidjon Ishquvvatov</div>
-                    <div class="items__subtitle">Python kurslari zo'r
-                        men sizlarga ham tavsiya qilaman, Fulfil education kurslarini!
-                    </div>
-                </div>
-                <div class="slider__items items">
-                    <img src="{% static 'img/Fulfilimg/Shoxrux.jpg' %}" alt="images">
-                    <div class="overlay"></div>
-                    <div class="items__title">Toshmatov Eshmat</div>
-                    <div class="items__subtitle">Fulfil educationda
-                        o'qiyotganimdan juda ham xursandman, darslar zo'r!
-                    </div>
+{% if pupil_comment_list and pupil_comment_list|length > 3 %}
+    <main>
+        <div class="slider">
+            <div class="slider__title"><span>Bizning kursimiz</span> haqida <br>
+                o’quvchilarning fikri
+            </div>
+            <br>
+            <div class="slider__body">
+                <div class="slider__slick multiple-items">
+                    
+                    {% for obj in pupil_comment_list %}
+                        
+                            <div class="slider__items items">
+                                {% if obj.pupil_image %}
+                                    <img src="{{ obj.pupil_image.url }}" alt="images">
+                                {% elif obj.pupil_male %}
+                                    <img src="{% static 'img/non_user_m.jpg' %}" alt="images">
+                                {% elif obj.pupil_female %}
+                                    <img src="{% static 'img/non_user_f.jpg' %}" alt="images">
+                                {% else %}
+                                    <img src="{% static 'img/non_user.jpg' %}" alt="images">
+                                {% endif %}
+                                <div class="overlay"></div>
+                                <div class="items__title">{{ obj.pupil_name }}</div>
+                                <div class="items__subtitle">
+                                    {{ obj.pupil_comment|safe }}
+                                </div>
+                            </div>
+                       
+                    {% endfor %}
+                    
                 </div>
             </div>
         </div>
-    </div>
-</main>
+    </main>
+{% elif pupil_comment_list and pupil_comment_list|length < 4 %}
+    <h2 class="fikr">Bizning Kurs haqida <span>o'quvchilarimiz fikri</span></h2>
+	<div class="sliders">
+        {% for obj in pupil_comment_list %}
+            <div class="slide1 wow animate__animated animate__flipInY animate__slow">
+
+                {% if obj.pupil_male %}
+                <div class="back back-m">
+                    <img src="{% static 'img/non_user_m.jpg' %}" alt="image">	
+                </div>
+                {% elif obj.pupil_female %}
+                <div class="back back-f">
+                    <img src="{% static 'img/non_user_f.jpg' %}" alt="image">	
+                </div>
+                {% else %}
+                <div class="back back-f">
+                    <img src="{% static 'img/non_user.jpeg' %}" alt="image">
+                </div>
+                {% endif %}
+
+                <h3 style="color: black;">{{ obj.pupil_name }}</h3>
+                <p> {{ obj.pupil_comment|safe }}</p>
+            </div>
+            
+        {% endfor %}
+	</div>
+{% endif %}
 
 {% endblock content %}

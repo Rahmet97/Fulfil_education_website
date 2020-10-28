@@ -108,32 +108,36 @@
 
 
 			<!-- ////////////////////////////////////////    -->
-			<h2 class="fikr">Bizning Kurs haqida <span>o'quvchilarimiz fikri</span></h2>
-			<div class="sliders">
+			{% if pupil_comment_list %}
+				<h2 class="fikr">Bizning Kurs haqida <span>o'quvchilarimiz fikri</span></h2>
+				<div class="sliders">
 
-				<div class="slide1 wow animate__animated animate__flipInY animate__slow">
-					<div class="back back1"></div>
-					<h3>Gulxayo Xamzayiva</h3>
-					<p>Salom hammaga Fulfil educationning MERN kursiga men qo‘shilganimga hali ikki haftadan oshdi lekin mana shu oz fursatda ancha narsa o‘rgandim.</p>
+					{% for obj in pupil_comment_list %}
+						
+							<div class="slide1 wow animate__animated animate__flipInY animate__slow">
+
+								{% if obj.pupil_male %}
+								<div class="back back-m">
+									<img src="{% static 'img/non_user_m.jpg' %}" alt="image">	
+								</div>
+								{% elif obj.pupil_female %}
+								<div class="back back-f">
+									<img src="{% static 'img/non_user_f.jpg' %}" alt="image">	
+								</div>
+								{% else %}
+								<div class="back back-f">
+									<img src="{% static 'img/non_user.jpeg' %}" alt="image">
+								</div>
+								{% endif %}
+	
+								<h3 style="color: black;">{{ obj.pupil_name }}</h3>
+								<p> {{ obj.pupil_comment|safe }}</p>
+							</div>
+						
+					{% endfor %}
+
 				</div>
-				<div class="slide1 wow animate__animated animate__flipInY animate__slow">
-					<div class="back back2"></div>
-					<h3>Komilbek Rasulov</h3>
-					<p>Fulfil educationni kanalda chiqayotgan darslariga gap bo'lishi mumkin emas sifatli va foydali
-						malumotlar bo'lmoqda.</p>
-
-				</div>
-				<div class="slide1 wow animate__animated animate__flipInY animate__slow">
-					<div class="back back3"></div>
-					<h3>Zoxriddin Tursinov</h3>
-					<p>Men Python Sun'iy intellekt kursga qatnashib juda ko'p bilimlarga ega bo'ldim
-						xamda freelancer platformalarda buyurtmalar olib bajarmoqdaman!.</p>
-
-				</div>
-
-
-			</div>
-
+			{% endif %}
 			<!-- //////////////////////////////////////////-->
 
 		</div>
@@ -141,3 +145,70 @@
 		
 	</div>
 {% endblock content %}
+
+
+
+{% comment %}
+
+
+
+
+
+  
+<div class="slide1 wow animate__animated animate__flipInY animate__slow">
+									
+	<!-- <div class="back back1"></div> -->
+
+
+
+	<div style="background-size: cover; background-repeat: no-repeat;">
+		{% if obj.pupil_image %}
+			<img style="background-position: center;" src="{{ obj.image_url }}" alt="">
+		{% elif obj.pupil_male %}
+			<img style="background-position: center;" src="{% static 'img/non_user_m.jpeg' %}" alt="">
+		{% elif obj.pupil_female %}
+			<img style="background-position: center;" src="{% static 'img/non_user_f.jpeg' %}" alt="">
+		{% else %}
+			<img style="background-position: center;" src="{% static 'img/non_user.jpeg' %}" alt="">
+		{% endif %}
+	</div>
+
+	
+
+	<h3>{{ obj.pupil_name }}</h3>
+	<p> {{ obj.pupil_comment|safe }}</p>
+</div>
+
+
+
+/* background-image: url(../resourches/person_1.jpg);
+  background-position: center; */
+
+
+  /* .back {
+	background-size: cover;
+	background-repeat: no-repeat;
+  } */
+  
+
+
+
+.back1 img {
+	-o-object-fit: cover;
+	object-fit: cover;
+	height: 300;
+	width: 100%;
+  }
+
+.back2 {
+	background-image: url(../resourches/person_2.jpg);
+	background-position: center;
+  }
+  
+  .back3 {
+	background-image: url(../resourches/person_6.jpg);
+	background-position: center;
+  }
+  
+
+  {% endcomment %}

@@ -43,16 +43,16 @@
 								<div class="smm__form">
 									<form method="POST" action="">
 										
-										{% csrf_token %}
+										<p class="error-lists" style="color: aliceblue;">{% csrf_token %}</p>
 										{{ form.non_field_errors }}
 										
-										{{ form.pupil_name.errors }}
+										<p class="name-error" style="color: aliceblue;">{{ form.pupil_name.errors }}</p>
 										{{ form.pupil_name }}<br>
 										
-										{{ form.pupil_phonenumber.errors }}
+										<p class="phone-number-error" style="color: aliceblue;">{{ form.pupil_phonenumber.errors }}</p>
 										{{ form.pupil_phonenumber }}<br>
 										
-										{{ form.pupil_email.errors }}
+										<p class="email-error" style="color: aliceblue;">{{ form.pupil_email.errors }}</p>
 										{{ form.pupil_email }}<br>
 										<button type="submit" class="btn" >Jo’natish</button>
 									</form>

@@ -36,7 +36,7 @@ class FeedbackForm(forms.Form):
                      )
                  )
     phone_number = forms.CharField(
-                 max_length=25,
+                 max_length=13,
                  widget=forms.TextInput(
                         attrs={
                             'type': "text",

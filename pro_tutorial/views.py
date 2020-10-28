@@ -93,28 +93,34 @@ class Course_Info(View):
                 name         = form.cleaned_data['pupil_name']
                 email        = form.cleaned_data['pupil_email']
                 phone_number = form.cleaned_data['pupil_phonenumber']
-                
+
                 form = Pupil.objects.create(pupil_name=name, pupil_phonenumber=phone_number, pupil_email=email,  course_name=self.course_name, teacher_name=self.teacher_name,)
                 form.save() # save new pupil info to the database
                 
                 try:
-                    
-                    # sending email to the host
-                    # send_mail(name, f'{name} {self.course_name.pro_course_name} kursga qatnashmoqchi.\n Tel:{phone_number}\nEmail{email}', settings.EMAIL_HOST_USER, ['@example.com']) 
-                    # ------- HOST -------
-                    
-                    # sending email to the applier
-                    send_mail('FulFil Education', f'Siz {self.course_name} kursiga yozildingiz. \nMurojat uchun: \nTel: 998683826;', settings.EMAIL_HOST_USER, [email])
-                    messages.success(request, f"{name} xabaringiz muvofaqiyatli yuborildi.")
+                    # ------ sending email to the APPLIER ------
+                    subject    = "FULFIL EDUCATION"
+                    thoughts   = f"Siz {self.course_name} kursiga yozildingiz. \nMurojat uchun: \nTel: +998990882745; \nEmail: suhrobabduaxatov@gmail.com"
+                    # recipients = ['suhrobabduaxatov@gmail.com']
+                    recipients = [email]
+
+                    send_mail(subject, thoughts, settings.EMAIL_HOST_USER, recipients)
                     # ------- APPLIER -------
+
+                    # ------ sending email to the BOSS ------
+                    thoughts   = f"Yangi talaba {self.course_name} kursiga ro'yhatdan o'tdi. \nTalaba Isim/Familyasi: {name} \nMurojat uchun: \nTel: {phone_number}; \nEmail: {email}"
+                    recipients = ['suhrobabduaxatov@gmail.com']
+
+                    send_mail(subject, thoughts, settings.EMAIL_HOST_USER, recipients)
+                    messages.success(request, f"{name} xabaringiz muvofaqiyatli yuborildi.")
+                    # ------- BOSS -------
 
                 except BadHeaderError:
                     return HttpResponse(f'Invalid header')
-
+                
                 return redirect("Pro_Tutorial:course-tutorial", id)
 
             else:
-                print("Errors", form.errors)
                 for msg in form.errors:
                     messages.error(request, f"{msg} - already exist.")
         else:

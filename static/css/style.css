@@ -2283,24 +2283,23 @@ textarea {
 }
 
 .back {
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+	background-size: cover;
+	background-repeat: no-repeat;
+  }
 
-.back1 {
-  background-image: url(../resourches/person_1.jpg);
-  background-position: center;
-}
 
-.back2 {
-  background-image: url(../resourches/person_2.jpg);
-  background-position: center;
-}
+/* .back1 {
+    background-image: url(../img/non-user.jpg);
+    background-position: center;
+  } */
 
-.back3 {
-  background-image: url(../resourches/person_6.jpg);
-  background-position: center;
-}
+.back-m img, .back-f img, .back img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    height: 300;
+    width: 100%;
+  }
+
 
 .footer {
   margin-top: 60px;

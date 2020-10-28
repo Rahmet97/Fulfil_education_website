@@ -94,16 +94,16 @@
 .fikr{
     text-transform: uppercase;
 }
-.back1 {
-    background-image: url(../img/Fulfilimg/Gulxayo.jpg);
+.back-m {
+    background-image: url(../img/non_user_m.jpg);
     background-position: center;
  }
- .back2 {
-    background-image: url(../img/Fulfilimg/komil.jpg);
+ .back-f {
+    background-image: url(../img/non_user_f.jpg);
     background-position: center;
  }
- .back3 {
-    background-image: url(../img/Fulfilimg/Zoxriddin.jpg);
+ .back {
+    background-image: url(../img/non_user.jpeg);
     background-position: center;
  }
 

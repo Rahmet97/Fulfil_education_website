@@ -76,7 +76,6 @@ INSTALLED_APPS = [
     'fulfil.apps.FulfilConfig',
     'video_tutorial.apps.VideoTutorialConfig',
     'pro_tutorial.apps.ProTutorialConfig',
-    # 'teacher.apps.TeacherConfig',
 ]
 
 MIDDLEWARE = [
@@ -113,25 +112,25 @@ WSGI_APPLICATION = 'fulfil_education.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': "fulfil_education",
-        'USER': 'admin',
-        'PASSWORD': '123456',
-        'HOST': 'localhost',
-    }
-}
-
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
 #         'NAME': "fulfil_education",
-#         'USER': 'root',
-#         'PASSWORD': '',
+#         'USER': 'admin',
+#         'PASSWORD': '123456',
 #         'HOST': 'localhost',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': "fulfil_education",
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+    }
+}
 
 
 # Password validation

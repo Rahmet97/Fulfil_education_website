@@ -6,6 +6,10 @@ from django.views import View
 
 
 from .models import News
+from pro_tutorial.models import (
+    ProCourseName, 
+    Pupil,
+)
 
 # Create your views here.
 
@@ -15,6 +19,12 @@ class Home(View):
     template_name='fulfil/index.html'
     context = {}
     def get(self, request, *args, **kwargs):
+        pupil_comment_list = [obj for obj in Pupil.objects.all() if obj.pupil_comment]
+        
+        self.context={
+            'pro_course_list': ProCourseName.objects.all(),
+            'pupil_comment_list': pupil_comment_list,
+        }
         return render(
             request,
             self.template_name,
@@ -26,7 +36,18 @@ class Home(View):
 class About(View):
     template_name='fulfil/about.html'
     context = {}
+
     def get(self, request, *args, **kwargs):
+        pupil_comment_queryset = [obj for obj in Pupil.objects.all().order_by("join_date") if obj.pupil_comment]
+        if len(pupil_comment_queryset) > 3:    
+            pupil_comment_list = pupil_comment_queryset[:3]
+        else:
+            pupil_comment_list = pupil_comment_queryset
+        
+        self.context={
+            'pupil_comment_list': pupil_comment_list,
+            'home_active': "active",
+        }
         return render(
             request,
             self.template_name,
@@ -46,7 +67,7 @@ class Contact(View):
 
     def get(self, request, *args, **kwargs):
         form                 = FeedbackForm()
-        messages.info(request, "Aloqa sahifasiga xush kelibsiz.")
+        # messages.info(request, "Aloqa sahifasiga xush kelibsiz.")
         self.context['form'] = form
         
         return render(
@@ -66,12 +87,14 @@ class Contact(View):
                 text         = form.cleaned_data['text']
 
                 try:
-                    subject    = f"{first_name} {last_name}"
-                    thoughts   = f"{text}\nTel: {phone_number}\nEmail: {email}"
+                    subject    = "FULFIL EDUCATION"
+                    thoughts   = f"{first_name} {last_name}dan yangi xabar: \n\n{text}\nTel: {phone_number}\nEmail: {email}"
                     sender     = settings.EMAIL_HOST_USER
-                    recipients = ['example@gmail.com']
+                    recipients = ['suhrobabduaxatov@gmail.com']
+                    # recipients = ['dovurovjamshid95@gmail.com']
 
                     send_mail(subject, thoughts, sender, recipients, fail_silently=False)
+                      
                     messages.success(request, f"{first_name} xabaringiz muvofaqiyatli yuborildi.")
                 except BadHeaderError:
                     return HttpResponse('Invalid header')
