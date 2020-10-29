@@ -11,8 +11,8 @@ class Teacher(models.Model):
 
     class Meta:
         ordering = ['teacher_name']
-        verbose_name = "O\'qtuvchi"
-        verbose_name_plural = "O\'qtuvchilar"
+        verbose_name = "O\'qituvchi"
+        verbose_name_plural = "O\'qituvchilar"
 
     def __str__(self):
         return self.teacher_name
