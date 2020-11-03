@@ -8,11 +8,11 @@ burger.addEventListener("click", (e) => {
 
 const loading = document.querySelector('.loading');
 
-//  loading.style.display = 'none'
+ loading.style.display = 'none'
 
-setTimeout(() => {
-	loading.style.display = 'none'
-}, 2000);
+// setTimeout(() => {
+// 	loading.style.display = 'none'
+// }, 2000);
 
 
 
@@ -50,3 +50,6 @@ function year() {
 }	
 year();
 
+const btnClose = document.querySelector('button.close').addEventListener('click', () => {
+	let alert = document.querySelector('.alert').style.display = 'none';
+})

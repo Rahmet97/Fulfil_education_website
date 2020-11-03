@@ -226,8 +226,10 @@
         </div>
     </div>
 </section>
-{% if pupil_comment_list and pupil_comment_list|length > 3 %}
     <main>
+
+        {% if pupil_comment_list %}
+
         <div class="slider">
             <div class="slider__title"><span>Bizning kursimiz</span> haqida <br>
                 o’quvchilarning fikri
@@ -241,12 +243,8 @@
                             <div class="slider__items items">
                                 {% if obj.pupil_image %}
                                     <img src="{{ obj.pupil_image.url }}" alt="images">
-                                {% elif obj.pupil_male %}
-                                    <img src="{% static 'img/non_user_m.jpg' %}" alt="images">
-                                {% elif obj.pupil_female %}
-                                    <img src="{% static 'img/non_user_f.jpg' %}" alt="images">
                                 {% else %}
-                                    <img src="{% static 'img/non_user.jpg' %}" alt="images">
+                                    <img src="{% static 'img/non_user.jpeg' %}" alt="images">
                                 {% endif %}
                                 <div class="overlay"></div>
                                 <div class="items__title">{{ obj.pupil_name }}</div>
@@ -254,39 +252,17 @@
                                     {{ obj.pupil_comment|safe }}
                                 </div>
                             </div>
-                       
+                        
                     {% endfor %}
                     
                 </div>
             </div>
         </div>
+  
+        {% else %}
+        {% comment %} <p class="rang1P" ><strong>Izoxlar Mavjud Emas ;(</strong></p>{% endcomment %}
+        <hr class="line">
+        {% endif %}
     </main>
-{% elif pupil_comment_list and pupil_comment_list|length < 4 %}
-    <h2 class="fikr">Bizning Kurs haqida <span>o'quvchilarimiz fikri</span></h2>
-	<div class="sliders">
-        {% for obj in pupil_comment_list %}
-            <div class="slide1 wow animate__animated animate__flipInY animate__slow">
-
-                {% if obj.pupil_male %}
-                <div class="back back-m">
-                    <img src="{% static 'img/non_user_m.jpg' %}" alt="image">	
-                </div>
-                {% elif obj.pupil_female %}
-                <div class="back back-f">
-                    <img src="{% static 'img/non_user_f.jpg' %}" alt="image">	
-                </div>
-                {% else %}
-                <div class="back back-f">
-                    <img src="{% static 'img/non_user.jpeg' %}" alt="image">
-                </div>
-                {% endif %}
-
-                <h3 style="color: black;">{{ obj.pupil_name }}</h3>
-                <p> {{ obj.pupil_comment|safe }}</p>
-            </div>
-            
-        {% endfor %}
-	</div>
-{% endif %}
 
 {% endblock content %}

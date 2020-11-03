@@ -6,11 +6,15 @@ from django.views import View
 
 
 from .models import News
+from .forms import PupilCommentForm
 from pro_tutorial.models import (
     ProCourseName, 
     Pupil,
+    Pupil_comment,
 )
-
+from pro_tutorial.forms import (
+    CourseForm,
+)
 # Create your views here.
 
 
@@ -19,7 +23,7 @@ class Home(View):
     template_name='fulfil/index.html'
     context = {}
     def get(self, request, *args, **kwargs):
-        pupil_comment_list = [obj for obj in Pupil.objects.all() if obj.pupil_comment]
+        pupil_comment_list = [obj for obj in Pupil_comment.objects.all() if obj.pupil_comment]
         
         self.context={
             'pro_course_list': ProCourseName.objects.all(),
@@ -32,27 +36,43 @@ class Home(View):
         )
 
 
-# Class Based About View
 class About(View):
-    template_name='fulfil/about.html'
-    context = {}
+    template_name = 'fulfil/about.html'
+    context       = {}
 
     def get(self, request, *args, **kwargs):
-        pupil_comment_queryset = [obj for obj in Pupil.objects.all().order_by("join_date") if obj.pupil_comment]
-        if len(pupil_comment_queryset) > 3:    
-            pupil_comment_list = pupil_comment_queryset[:3]
-        else:
-            pupil_comment_list = pupil_comment_queryset
-        
-        self.context={
-            'pupil_comment_list': pupil_comment_list,
-            'home_active': "active",
-        }
+        form = PupilCommentForm()
+        self.context["form"] = form
         return render(
             request,
             self.template_name,
             self.context
         )
+
+    def post(self, request, *args, **kwargs):
+        if request.method == "POST":
+            form = PupilCommentForm(request.POST, request.FILES)
+            if form.is_valid():
+                name = form.cleaned_data["pupil_name"]
+                form.save()
+                messages.success(request, f"{name} fikir mulohazangiz uchun raxmat.")
+                return redirect('FulFil:about')
+            else:
+                for msg in form.errors:
+                    messages.error(request, f"{form.errors[msg]}")
+                form = PupilCommentForm()
+                # return redirect('FulFil:about')
+        else:
+            form = PupilCommentForm()
+            return redirect('FulFil:about')
+        self.context["form"] = form
+        
+        return render(
+            request,
+            self.template_name,
+            self.context
+        )
+
 
 
 # Class Based Contact View

@@ -13,6 +13,7 @@ from .models import (
     ProCourseInfo,
     Teacher,
     Pupil,
+    Pupil_comment,
 )
 
 

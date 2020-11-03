@@ -7,6 +7,7 @@ from .models import (
     ProCourseInfo,
     Teacher,
     Pupil,
+    Pupil_comment
 )
 # Register your models here.
 
@@ -64,7 +65,7 @@ admin.site.register(ProCourseName, ProCourseNameAmin)
 
 
 class PupilAdmin(admin.ModelAdmin):
-    list_display       = ('course_name', 'teacher_name', 'pupil_name', 'pupil_male', 'pupil_female', 'pupil_phonenumber', 'pupil_email', 'join_date', )
+    list_display       = ('course_name', 'teacher_name', 'pupil_name', 'pupil_phonenumber', 'pupil_email', 'join_date', )
     list_display_links = ('pupil_name', 'pupil_phonenumber', 'pupil_email', 'join_date', )
     search_fields      = ('pupil_name', 'teacher_name', 'course_name', )
     list_editable      = ('course_name', 'teacher_name', )
@@ -73,13 +74,13 @@ class PupilAdmin(admin.ModelAdmin):
     fieldsets = (
         ('O\'quvchi Info:', {
             'fields': (
-                'pupil_image',
+                # 'pupil_image',
                 'pupil_name',
-                'pupil_male',
-                'pupil_female', 
+                # 'pupil_male',
+                # 'pupil_female', 
                 'pupil_phonenumber', 
                 'pupil_email', 
-                'pupil_comment',
+                # 'pupil_comment',
             ),
         }),
         ('O\'qtuvchi/Kurs:', {
@@ -94,3 +95,5 @@ class PupilAdmin(admin.ModelAdmin):
     }
 
 admin.site.register(Pupil, PupilAdmin)
+
+admin.site.register(Pupil_comment)

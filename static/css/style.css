@@ -1297,7 +1297,12 @@ footer .fa {
   top: 2445px;
   z-index: -1;
 }
-
+.bg-img6 {
+  display: none;
+}
+.teachers__body {
+  min-height: 40vh;
+}
 .teachers__title {
   color: #ffffff;
   font-family: "Open Sans";
@@ -2049,7 +2054,11 @@ textarea {
   display: flex;
   padding-top: 70px;
 }
-
+.haqida h2 {
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 .yozuv {
   width: 50%;
   padding-top: 25px;
@@ -2081,6 +2090,7 @@ textarea {
   width: 50%;
   background-image: url(../resourches/team.jpg);
   background-size: cover;
+  height: 400px;
 }
 
 .rasm img {
@@ -2318,7 +2328,9 @@ textarea {
   padding: 5px;
   font-size: 18px;
 }
-
+.haqida {
+  height: 100%
+}
 @media (min-width: 1000px) and (max-width: 1200px) {
   .yozuv p {
     line-height: 27px;
@@ -2551,4 +2563,26 @@ textarea {
   max-width: 260px;
   text-align: center;
   background-color: #7e7e7e;
+}
+
+/* alert */
+
+.alert {
+  text-align: center;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 7px 0;
+  background-color: rgb(6, 199, 6);
+  position: relative;
+  height: 50px;
+}
+button.close {
+  font-size: 28px;
+  border: none;
+  background-color: #ddd;
+  cursor: pointer;
+  padding: 0px 17px;
+  margin-right: auto;
+  position: absolute;
+  right: 10%;
 }

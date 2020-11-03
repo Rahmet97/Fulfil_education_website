@@ -9,8 +9,6 @@
 		<div class="teachers__body">
 			<div class="teachers__items">
 
-				{% if teachers_list %}
-				
 					{% for teacher in teachers_list %}
 
 						{% if forloop.counter|divisibleby:2 %}
@@ -38,12 +36,10 @@
 								</div>
 							</div>
 						{% endif %}
-
+					{% empty %}
+						<p class="rang1P"><strong>O'qtuvchilar Ro'yhati Mavjud Emas ;(</strong></p>
 					{% endfor %}
 
-				{% else %}
-					<p class="rang1P"><strong>O'qtuvchilar Ro'yhati Mavjud Emas ;(</strong></p>
-				{% endif %}
 
 			</div>
 		</div>

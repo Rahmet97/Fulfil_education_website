@@ -11,8 +11,6 @@
 
 					<div class="blogs__items">
 						
-						{% if news_list %}
-						
 							{% for object in news_list %}
 								<div class="blogs__card" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="100">
 									<a href="{{ object.blog_url }}">
@@ -20,12 +18,9 @@
 										<div class="blogs__card-text">{{ object.blog_description|safe }}</div>
 									</a>
 								</div>
-							{% endfor %}
-
-						{% else %}
-							<p><strong>Yangilklar Mavjud Emas ;(</strong></p>
-						{% endif %}
-						
+							{% empty %}
+								<p class="rang1P" ><strong>Yangilklar Mavjud Emas ;(</strong></p>
+							{% endfor %}					
 					</div>
 
 				</div>

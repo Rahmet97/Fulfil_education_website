@@ -143,7 +143,7 @@
     border-radius: 10px;
     width: 100px;
     height: 40px;
-   margin-top: 15px;
+   margin: 15px auto;
    border: 1.5px solid #333;
    color:#333;
    background-color: #fff; 
@@ -172,7 +172,6 @@ label{
 }
 
 
-
 #royxat{
     text-align: center;
 }
@@ -188,18 +187,13 @@ label{
     width:30px;
 }
 
-.rasm{
-    height:300px;
-}
 .qulayliklar{
 padding-top: 0;
-position: relative;
-top: -200px;
+
 }
 .kurss{
-    position: relative;
-    top:-50px;
-padding-top: 0;
+
+padding-top: 20px;
 padding-bottom: 50px;
 }
 .ib1 p{
@@ -212,3 +206,172 @@ padding-bottom: 50px;
 #sariq1{
     color: yellow;
 }
+
+
+body {
+	background-color: #333;
+}
+
+#royxat {
+	text-align: center;
+	padding-top: 10px;
+}
+
+.clas22 {
+	/* max-width: 1100px; */
+	margin: auto;
+}
+
+.clas22 form {
+	text-align: center;
+}
+
+.clas22 label {
+	padding: 10px 0 0 15px;
+	display: block;
+	margin-bottom: 15px;
+	margin-top: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.clas22 input {
+	width: 400px;
+	margin: auto;
+	padding: 15px;
+	border-radius: 10px;
+	border: 2px solid #333;
+}
+
+.clas22 textarea {
+	width: 100%;
+	padding: 15px;
+	border-radius: 10px;
+	margin: auto;
+	border: none;
+	height: 200px;
+}
+
+.clas22 button {
+	margin-right: 100%;
+	border-radius: 10px;
+	width: 100px;
+	height: 40px;
+	margin: 20px, auto;
+	border: 1.5px solid #111;
+	color: #333;
+	background-color: lightblue !important;
+}
+
+.tekshiruv h2,
+.clas22 h2 {
+	color: #fff;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-weight: 500;
+}
+
+label {
+	color: #fff;
+	text-align: left;
+}
+
+#tekshirish {
+	display: none;
+	overflow: hidden;
+	height: 160px;
+	width: 310px;
+	border-radius: 10px;
+	border: 2px solid #333;
+}
+
+#filein {
+	border-radius: 15px;
+	border: 1px solid #fff;
+	margin-top: 10px;
+
+}
+
+.flexcc {
+	display: flex;
+}
+
+#jins,
+#jins2 {
+	width: auto;
+	word-break: break-all;
+}
+
+#green1 {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	text-align: center;
+	color: yellow;
+	font-size: 30px;
+	font-weight: 500;
+	width: 70%;
+	margin: 5px auto;
+	padding-left: 20px;
+}
+
+@media(max-width:768px) {
+	#green1 {
+
+		font-size: 20px;
+	}
+
+	.clas22 button {
+		margin-right: 80%;
+
+	}
+
+	.clas22 input {
+		width: 400px;
+	}
+
+	.clas22 {
+		padding-right: 30px;
+		/* width: 70%; */
+	}
+}
+@media (max-width: 546px) {
+    .clas22 input {
+		width: 100%;
+	}
+}
+@media (max-width: 414px) {
+    .clas22  {
+        width: 100%;
+        margin-right: 0;
+    }
+    .clas22 input {
+        width: 318px;
+    }
+    #green1 {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .clas22 textarea {
+        width: 318px !important;
+        height: 147px;
+    }
+}
+@media (max-width: 375px) {
+    .qoshimcha {
+        padding: 20px 27px;
+    }
+}
+.info__wrap {
+	display: flex;
+	justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100% !important;
+}
+input[type="file"] {
+	margin: 0px 0px 50px 0px;
+}
+.info__sex--title {
+	font-size: 20px;
+}
+.info__form {
+    margin-right: 35px;
+}
+
+
