@@ -108,41 +108,53 @@
 
 
 			<!-- ////////////////////////////////////////    -->
-			{% if pupil_comment_list %}
-				<h2 class="fikr">Bizning Kurs haqida <span>o'quvchilarimiz fikri</span></h2>
-				<div class="sliders">
-
-					{% for obj in pupil_comment_list %}
-						
-							<div class="slide1 wow animate__animated animate__flipInY animate__slow">
-
-								{% if obj.pupil_male %}
-								<div class="back back-m">
-									<img src="{% static 'img/non_user_m.jpg' %}" alt="image">	
-								</div>
-								{% elif obj.pupil_female %}
-								<div class="back back-f">
-									<img src="{% static 'img/non_user_f.jpg' %}" alt="image">	
-								</div>
-								{% else %}
-								<div class="back back-f">
-									<img src="{% static 'img/non_user.jpeg' %}" alt="image">
-								</div>
-								{% endif %}
+			<div class="qoshimcha">
+				<div class="clas22">
+					<h2 id="royxat"> <span id="sariq1"> Izoh </span> qoldirish</h2>
+              
+					<form id="formma" action="qayta ishlash file masalan index.php" method="POST">
+						<br>
+						<label >Your Name</label>
+						 <input type="text" name="ism">
+						 <br>
+						 <label >Email Address</label>
+						 <input type="email" name="email">
 	
-								<h3 style="color: black;">{{ obj.pupil_name }}</h3>
-								<p> {{ obj.pupil_comment|safe }}</p>
-							</div>
-						
-					{% endfor %}
+						 <br>
+				
+						 <label >or telephone number</label>
+						 <input type="number" name="number">
+	
+						 <br>
+						<div class="tekshiruv" >
+							<br>
+						  <h2>Fikringizni qoldiring:</h2>
+							<textarea name="" id="tekshirish" ></textarea>
+						</div>
+						<br>
 
+							<!--        -->
+
+				<div class="clas23">
+					<div class="flexradio">
+					<label for="Erkak">Erkak</label>
+					<input id="radio1" type="radio" name="jins">
+					<label  for="Ayol">Ayol</label>
+					<input id="radio2" type="radio" name="jins">
 				</div>
-			{% endif %}
-			<!-- //////////////////////////////////////////-->
+				<br>
+					<input type="file" name="filename" id="rasm" accept="image/gif, image/jpeg, image/png">
+					
+				</div>
 
-		</div>
+						<button type="submit">Submit</button>
+			<br>
+						
+						</form>
+				</div>
 
-		
+			
+	
 	</div>
 {% endblock content %}
 

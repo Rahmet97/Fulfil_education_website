@@ -43,7 +43,7 @@
 								<div class="smm__form">
 									<form method="POST" action="">
 										
-										<p class="error-lists" style="color: aliceblue;">{% csrf_token %}</p>
+										{% csrf_token %}
 										{{ form.non_field_errors }}
 										
 										<p class="name-error" style="color: aliceblue;">{{ form.pupil_name.errors }}</p>

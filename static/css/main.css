@@ -1,3 +1,9 @@
+*{
+    word-break:break-all;
+}
+*:focus{
+    outline:none;
+}
 .main__title{
     font-size: 35px;
     margin-bottom: 30px;
@@ -107,4 +113,102 @@
     background-position: center;
  }
 
- 
+ .rang1P{
+     text-align: center;
+     color:#fff;
+ }
+/*..................*/
+
+.clas22{
+    width: 80%;
+    margin: auto
+}
+.formma{
+    width:100%;
+}
+.clas22 label{
+    display: block;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+.clas22 input{
+    width: 50%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #333;
+}
+.clas22 button{
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+   margin-top: 15px;
+   border: 1.5px solid #333;
+   color:#333;
+   background-color: #fff; 
+}
+.tekshiruv h2,.clas22 h2{
+    color:#fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+}
+label{
+    color:#fff;
+}
+#tekshirish{
+   
+   overflow: hidden;
+   height: 160px;
+   width: 430px;
+   border-radius: 10px;
+   border: 2px solid #333;
+}
+.qoshimcha{
+   padding: 20px 50px;
+   display:flex;
+   justify-content:center;
+
+}
+
+
+
+#royxat{
+    text-align: center;
+}
+
+.clas23{
+    color: #000;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+
+}
+
+#radio1,#radio2{
+    width:30px;
+}
+
+.rasm{
+    height:300px;
+}
+.qulayliklar{
+padding-top: 0;
+position: relative;
+top: -200px;
+}
+.kurss{
+    position: relative;
+    top:-50px;
+padding-top: 0;
+padding-bottom: 50px;
+}
+.ib1 p{
+    text-align: center;
+}
+
+#royxat{
+    padding-top:50px;
+}
+#sariq1{
+    color: yellow;
+}
